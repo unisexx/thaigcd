@@ -58,6 +58,15 @@
 			</ul>
 			<div class="more"><a href="executives/view/<?php echo $executive->id?>">อ่านต่อ</a></div>
 		</div>
+		<div class="executive" style="margin-top:10px;">
+			<h3>ผู้บริหารเทคโนโลยีสารสนเทศระดับสูง สำนักโรคติดต่อทั่วไป</h3>
+			<ul>
+				<?php foreach($executive_its as $it):?>
+					<li>- <a href="executives/it_view/<?php echo $it->id?>"><?php echo lang_decode($it->title)?></a></li>
+				<?php endforeach;?>
+			</ul>
+			<div class="more"><a href="executives/it_view/<?php echo $it->id?>">อ่านต่อ</a></div>
+		</div>
 	</div>
 	<br clear="all">
 	<div style="margin-top:5px;">

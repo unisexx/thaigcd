@@ -23,6 +23,9 @@ class Executives extends Public_Controller
 			$data['executive_infos'] = new Executive_info();
 			$data['executive_infos']->order_by('id','desc')->get(5);
 			
+			$data['executive_its'] = new Executive_it();
+			$data['executive_its']->order_by('id','desc')->get(5);
+			
 			$executives = new Executive();
 		lang_filter($executives->where("start_date <= date(sysdate()) and (end_date >= date(sysdate()) or end_date = date('0000-00-00')) and status = 'approve'"));
 			$data['executives'] = $executives->order_by('id','desc')->get(5);
@@ -102,6 +105,15 @@ class Executives extends Public_Controller
 		$data['executives'] = new Executive_info();
 		$data['executives']->order_by('id','desc')->get();
 		$this->template->build('info_view',$data);
+	}
+	
+	function it_view($id)
+	{
+		$data['executive'] = new Executive_it($id);
+		
+		$data['executives'] = new Executive_it();
+		$data['executives']->order_by('id','desc')->get();
+		$this->template->build('it_view',$data);
 	}
 	
 	function history($id){
