@@ -77,13 +77,17 @@
 	<? include "_footer.php";?>
 </div><!--dvfooter-->
 
-<!-- <script>
+<script>
   $(function() {
-    $( "#dialog" ).dialog({modal: true});
+    $( "#dialog" ).dialog({
+        modal: true,
+        width:'auto'
+	});
   });
 </script>
 <div id="dialog" title="ประกาศ">
-  <p><a href="http://thaigcd.ddc.moph.go.th/docs/publics/questionaire/30" target="_blank">ขอเชิญชวนทุกท่านร่วมตอบแบบสอบถาม - แบบประเมินความพึงพอใจ/ความไม่พึงพอใจของผู้ใช้บริการเว็บไซต์ของสำนักโรคติดต่อทั่วไป</a></p>
-</div> -->
+  <img src="http://image.free.in.th/v/2013/ie/131105011314.jpg">
+  <br><div>ขอถวายความอาลัยแด่ สมเด็จพระญาณสังวร สมเด็จพระสังฆราช สกลมหาสังฆปรินายก</div>
+</div>
 </body>
 </html>
