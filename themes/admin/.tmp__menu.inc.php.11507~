@@ -1,0 +1,11 @@
+<ul class="menu">
+	<li <?php echo menu_active('profile')?>><a href="user/admin/">Profile</a></li>
+	<li <?php echo menu_active('user')?>><a href="user/admin">Member</a></li>
+	<li <?php echo menu_active('wholesale')?>><a href="wholesale/admin">Wholesale</a></li>
+	<li <?php echo menu_active('collections')?>><a href="collections/admin">Collections</a></li>
+	<li <?php echo menu_active('product')?>><a href="product/admin">Product</a></li>
+	<li <?php echo menu_active('policy')?>><a href="policy/admin">Policy</a></li>
+	<li <?php echo menu_active('faq')?>><a href="faq/admin">Faq</a></li>
+	<li <?php echo menu_active('shipping')?>><a href="shipping/admin">Shipping</a></li>
+	<li <?php echo menu_active('contact')?>><a href="contact/admin">Contact</a></li>
+</ul>

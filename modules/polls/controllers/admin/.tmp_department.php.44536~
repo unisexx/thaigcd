@@ -1,0 +1,67 @@
+<?php
+class Bureau extends Admin_Controller
+{
+	
+	function __construct()
+	{
+		parent::__construct();
+		$this->load->model('bureau_model','bureau');
+	}
+	
+	function index()
+	{
+		$data['result'] = $this->bureau->get();
+		$data['pagination'] = $this->bureau->pagination();
+		$this->template->build('admin/bureau_index',$data);
+	}
+	
+	function form($id = FALSE)
+	{
+		$data['rs'] = $this->bureau->get_row($id);
+		$this->template->build('admin/bureau_form',$data);
+	}
+	
+	function save()
+	{
+		if($_POST)
+		{
+			$id = $this->user->save($_POST);
+			if($_FILES['image']['name'])
+			{
+				$this->user->delete_file($id,'uploads/user/','image');
+				$this->user->delete_file($id,'uploads/user/thumb/','image');
+				$this->user->delete_file($id,'uploads/user/50x50/','image');
+				$this->user->save(array('id' => $id, 'image' => $this->user->upload($_FILES['image'],'uploads/user/')));
+				$this->user->thumb('uploads/user/thumb/',100,100);
+				$this->user->thumb('uploads/user/50x50/',50,50);
+			} 
+			set_notify('success', SAVE_DATA_COMPLATE);
+		}
+		redirect('user/admin/user');
+	}
+	
+	function delete($id)
+	{
+		if($id)
+		{
+			$this->user->delete_file($id,'uploads/user/','image');
+			$this->user->delete_file($id,'uploads/user/thumb/','image');
+			$this->user->delete_file($id,'uploads/user/50x50/','image');
+			$this->user->delete($id);
+			set_notify('success', DELETE_DATA_COMPLATE);
+		} 
+		redirect('user/admin/user');		
+	}
+	
+	function remove_image($id)
+	{
+		$this->user->delete_file($id,'uploads/user/','image');
+		$this->user->delete_file($id,'uploads/user/thumb/','image');
+		$this->user->delete_file($id,'uploads/user/50x50/','image');
+		$this->user->save(array('id' => $id, 'image' => NULL));
+		set_notify('success', REMOVE_IMAGE_COMPLATE);
+		redirect('user/admin/user/form/'.$id);	
+	}
+	
+}
+?>

@@ -1,0 +1,49 @@
+<?php
+
+function login($username,$password)
+{
+	$CI =& get_instance();
+	$sql = 'select * from users where username = ? and password = ?';
+	$rs = $CI->db->GetRow($sql,array($username,$password));	
+	if(rs)
+	{
+		$CI->session->set_userdata('id',$rs['id']);
+		$CI->session->set_userdata('level',$rs['level_id']);
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	}
+}
+
+function is_login($level = FALSE)
+{
+	$CI =& get_instance();
+	if($level)
+	{
+		$sql = 'select id from users where id = ? and level_id <= ?';
+		$id = $CI->db->GetOne($sql,array($CI->session->userdata('id'),$CI->db->getone('select id from levels where level = ?',$level)));
+	}
+	else
+	{
+		$sql = 'select id from users where id = ?';
+		$id = $CI->db->GetOne($sql,$CI->session->userdata('id'));
+	}
+	return ($id) ? true : false;
+}
+
+function login_data($field)
+{
+	$CI =& get_instance();
+	$sql = 'select '.$field.' from users join levels on levels.id = users.level_id where users.id = ?';
+	return $CI->db->GetOne($sql,$CI->session->userdata('id'));
+}
+
+function logout()
+{
+	$CI =& get_instance();
+	$CI->session->unset_userdata('id');
+}
+	
+?>

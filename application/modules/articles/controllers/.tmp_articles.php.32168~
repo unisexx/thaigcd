@@ -1,0 +1,25 @@
+<?php
+class Articles extends Public_Controller
+{
+	
+	function __construct()
+	{
+		parent::__construct();
+	}
+	
+	function index($category_id)
+	{
+		$categories = new Category();
+		$data['categories'] = $categories->where('parents = '.$category_id)->order_by('lft','asc')->get(); 
+		$this->template->build('information',$data);
+	}
+	
+	function inc_tab($category_id,$view)
+	{
+		$categories = new Category();
+		$data['categories'] = $categories->where('parents = '.$category_id)->order_by('lft','asc')->get(); 
+		$this->load->view($view,$data);
+	}
+	
+}
+?>

@@ -1,0 +1,12 @@
+<?php
+class Link_model extends MY_Model {
+	
+	public $table = 'link';
+	
+    function __construct()
+    {
+        parent::__construct();
+    }
+	
+}
+?>

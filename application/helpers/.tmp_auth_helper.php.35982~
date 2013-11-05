@@ -1,0 +1,73 @@
+<?php
+
+function login($username,$password)
+{
+	$CI =& get_instance();
+	$user = new User();
+	$user->where(array('username'=>$username,'password'=>$password))->get();
+	if($user->exists())
+	{
+		$CI->session->set_userdata('id',$user->id);
+		$CI->session->set_userdata('level',$user->level_id);
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	}
+}
+
+function is_login($level_name = FALSE)
+{
+	$CI =& get_instance();
+	$user = new User($CI->session->userdata('id'));
+	if($level_name)
+	{
+		if($user->level->is_admin)
+		{
+			$id = ($user->level->is_admin == "1")? true : false ;
+		}
+		else
+		{
+			$id = false;
+		}
+	}
+	else
+	{
+		$id = $user->id;
+	}
+	return ($id) ? true : false;
+}
+
+function login_data($field)
+{
+	$CI =& get_instance();
+	$user = new User($CI->session->userdata('id'));
+	return $user->{$field};
+}
+
+function logout()
+{
+	$CI =& get_instance();
+	$CI->session->unset_userdata('id');
+	$CI->session->unset_userdata('level');
+}
+
+function is_auth()
+{
+	$CI =& get_instance();
+	$user = new User($CI->session->userdata('id'));
+	$user->level->auth = json_decode($user->level->auth);
+	if(@$user->level->auth->{$CI->router->fetch_module()}->{$CI->router->fetch_method()}=="1")
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+	
+	
+	
+?>

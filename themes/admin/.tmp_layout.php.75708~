@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<base href="<?php echo base_url(); ?>" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+		<title><?php echo $template['title']; ?></title> 
+		<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" charset="utf-8" /> 
+		<link rel="stylesheet" href="themes/default/css/layout.css" type="text/css" media="screen" charset="utf-8" /> 
+		<link rel="stylesheet" href="themes/default/css/style.css" type="text/css" media="screen" charset="utf-8" /> 
+		<link rel="stylesheet" href="css/pagination.css" type="text/css" media="screen" charset="utf-8" />
+		<?php echo $template['metadata']; ?>
+	</head>
+	<body>
+		<div id="header"><strong>Site:</strong> <a href="../index.php">Larva</a> 
+			<div id="login-info"> 
+				<strong>Login as:</strong> <?php echo modules::run('auth/wiget_display_login'); ?> | <a href="auth/logout" onclick="return confirm('ยืนยันการออกจากระบบ')" >Logout</a> 
+			</div> 
+		</div> 
+		<div id="container"> 
+			<div id="menu">
+				<ul class="menu">
+					<li class="active"><a href="user/admin/">User</a></li>
+					<li><a href="user/admin/form">User Form</a></li>
+					<li><a href="#">News</a></li>
+				</ul>
+			</div> 
+			<div id="content"><?php echo $template['body']; ?></div> 
+		</div> 
+		<div id="footer"></div> 
+	</body>
+</html>

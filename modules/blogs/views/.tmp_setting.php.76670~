@@ -1,0 +1,7 @@
+<h1>Setting</h1>
+<table class="form">
+	<tr><th>ชื่อบล็อค :</th><td><input type="text" name="title" value="<?php echo $blog->title ?>" /></td></tr>	
+	<tr><th>รายละเอียด :</th><td><textarea name="description" ><?php echo $blog->description ?></textarea></td></tr>
+	<tr><th>รูปเฮดเดอร์ :</th><td><input type="fie" name="meta[header]" /></td></tr>
+	<tr><th>รูปพื้นหลัง :</th><td></td><input type="hidden" name="meta[background]" value="<?php echo $blog->background_image ?>" /></tr>
+</table>

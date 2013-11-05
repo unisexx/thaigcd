@@ -1,0 +1,9 @@
+<ul class="menu">
+	<li <?php echo menu_active('user','profile')?>><a href="user/admin/profile">Profile</a></li>
+	<li <?php echo menu_active('user','user')?>><a href="user/admin/user">User</a></li>
+	<li <?php echo menu_active('article')?>><a href="article/admin/article">Article</a></li>
+	<li <?php echo menu_active('ebook')?>><a href="ebook/admin/ebook">E-Book</a></li>
+	<li <?php echo menu_active('page')?>><a href="page/admin/page">Page</a></li>
+	<li <?php echo menu_active('calendar')?>><a href="calendar/admin/calendar">Calendar</a></li>
+	<li <?php echo menu_active('calendar')?>><a href="video/admin/video">Video</a></li>
+</ul>

@@ -1,0 +1,52 @@
+<?php
+class Articles extends Admin_Controller
+{
+	
+	function __construct()
+	{
+		parent::__construct();
+	}
+	
+	function index($category_id=FALSE)
+	{
+		$articles = new Article();
+		if($category_id)
+		{
+			$category = new Category($category_id);
+			$articles->where("category_id in (select id from categories where lft >= ".$category->lft." and rgt <= ".$category->rgt." and module = '".$category->module."')");
+		}
+		$data['articles'] = $articles->order_by('id','desc')->get_page();
+		$this->template->append_metadata(js_lightbox());
+		$this->template->build('admin/article_index',$data);
+	}
+	
+	function save()
+	{
+		if($_POST)
+		{
+			$user = new User($this->session->userdata('id'));
+			$_POST['user_id'] = $user->id;
+			if($_FILES['image']['name'])
+			{
+				$user->profile->delete_file($user->profile->id,'uploads/users/','avatar');
+				$_POST['avatar'] = $user->profile->upload($_FILES['image'],'uploads/users/',100,100);
+			}
+			$user->profile->from_array($_POST);
+			$user->profile->save();
+			set_notify('success', lang('save_data_complete'));
+		}
+		redirect('users/admin/profiles');
+	}
+	
+	function remove_image()
+	{
+		$user = new User($this->session->userdata('id'));
+		$user->profile->delete_file($user->profile->id,'uploads/users/','avatar');
+		$user->profile->avatar = NULL;
+		$user->profile->save();
+		set_notify('success', lang('remove_image_complete'));
+		redirect('users/admin/profiles');	
+	}
+
+}
+?>

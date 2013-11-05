@@ -1,0 +1,23 @@
+<h1>หมวดหมู่</h1>
+<?php echo $pagination;?>
+<table class="list">
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Level</th>
+		<th width="90"><a class="btn" href="category/admin/category/<?php echo $module ?>/form" class="tiny">เพิ่มรายการ</a></th>
+	</tr>
+	<?php foreach($result as $key=>$rs): ?>
+	<tr <?php echo cycle($key)?>>
+		<td><?php echo $rs['name'];?></td>
+		<td><?php echo $rs['description'];?></td>
+		<td><?php echo display_crumb($this->category->get_path($rs['id']));?></td>
+		<td>
+			<a class="btn" href="category/admin/category/<?php echo $module ?>/form/<?php echo $rs['id']?>" >แก้ไข</a>
+			<a class="btn" href="category/admin/category/delete/<?php echo $rs['id']?>" onclick="return confirm('<?php echo 'บทความทั้งหมดในหมวดนี้จะถูกลบโดยอัตโนมัติ\nยืนยันการลบ'?>')">ลบ</a>
+		</td>
+	</tr>
+	<?php endforeach; ?>
+</table>
+<?php echo $pagination;?>
+	

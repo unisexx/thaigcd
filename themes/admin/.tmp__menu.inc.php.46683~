@@ -1,0 +1,7 @@
+<ul class="menu">
+	<li <?php echo menu_active('users','profiles')?>><a href="users/admin/profiles">ประวัติ</a></li>
+	<li <?php echo menu_active('users','users')?>><a href="users/admin/users">สมาชิก</a></li>
+	<li <?php echo menu_active('articles','articles')?>><a href="articles/admin/articles">บทความ</a></li>
+	<li <?php echo menu_active('informations','informations')?>><a href="informations/admin/informations">ข่าวประชาสัมพันธ์</a></li>
+	<li <?php echo menu_active('notices','notices')?>><a href="notices/admin/notices">ประกาศ/จัดจ้าง</a></li>
+</ul>

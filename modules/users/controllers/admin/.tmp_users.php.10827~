@@ -1,0 +1,26 @@
+<?php
+
+class Users extends Admin_Controller {
+
+	function __construct()
+	{
+		parent::__construct();	
+	}
+	
+	function index()
+	{
+		$users = new User();
+		$data['users'] = $users->order_by('id','desc')->get_page();
+		$this->template->build('admin/user_index',$data);
+	}
+	
+	function form($id=FALSE)
+	{
+		$data['user'] = new User($id);
+		$levels = new Level();
+		$data['levels'] = $levels->get();
+		$this->template->build('admin/user_form',$data);
+	}
+}
+
+?>

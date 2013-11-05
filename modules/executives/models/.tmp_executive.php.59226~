@@ -1,0 +1,13 @@
+<?php
+class executive extends ORM {
+
+    var $table = 'Executives';
+	
+	var $has_one = array('user','category');
+
+    function __construct($id = NULL)
+    {
+        parent::__construct($id);
+    }
+}
+?>

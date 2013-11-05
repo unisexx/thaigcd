@@ -1,0 +1,56 @@
+<?php
+class Blogs extends Admin_Controller
+{
+	
+	function __construct()
+	{
+		parent::__construct();
+	}
+	
+	function index()
+	{
+		$informations = new Information();
+		$data['informations'] = $informations->order_by('id','desc')->get_page();
+		$this->template->append_metadata(js_lightbox());
+		$this->template->append_metadata(js_checkbox('approve'));
+		$this->template->build('admin/information_index',$data);
+	}
+	
+	function form()
+	{
+		
+		if($_POST)
+		{
+			
+		}
+		$data['blog'] = new blog();
+		$data['blog']->where_related_user('id',$this->session->userdata('id'))->get();
+		$this->template->build("setting",$data);
+	}
+	
+	function save($id=FALSE)
+	{
+		if($_POST)
+		{
+			$information = new Information($id);
+			$_POST['user_id'] = $this->session->userdata('id');
+			$information->from_array($_POST);
+			$information->save();
+			set_notify('success', lang('save_data_complete'));
+		}
+		redirect('informations/admin/informations');
+	}
+	
+	function delete($id=FALSE)
+	{
+		if($id)
+		{
+			$information = new Information($id);
+			$information->delete();
+			set_notify('success', lang('delete_data_complete'));
+		}
+		redirect('informations/admin/informations');
+	}
+	
+}
+?>

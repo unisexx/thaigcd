@@ -1,0 +1,21 @@
+<h1>User</h1>
+<table class="list">
+	<tr>
+		<th>Username</th>
+		<th>Email</th>
+		<th>Level</th>
+		<th width="120"><a href="user/admin/user/form" class="btn"><?php echo BTN_ADD?></a></th>
+	</tr>
+	<?php foreach($result as $key => $item):?>
+	<tr <?php echo cycle($key)?>>
+		<td><?php echo $item['username']?></td>
+		<td><?php echo $item['email']?></td>
+		<td><?php echo $item['level']?></td>
+		<td>
+			<a href="user/admin/user/form/<?php echo $item['id']?>" class="btn"><?php echo BTN_EDIT?></a>
+			<a href="user/admin/user/delete/<?php echo $item['id']?>" class="btn" onclick="return confirm('<?php echo NOTICE_CONFIRM_DELETE?>')"><?php echo BTN_DELETE?></a>
+		</td>
+	</tr>
+	<?php endforeach?>
+</table>
+<?php echo $pagination?>

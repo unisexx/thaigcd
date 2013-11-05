@@ -1,0 +1,5 @@
+<ul class="menu">
+	<li <?php echo menu_active('users','profiles')?>><a href="users/admin/profiles">ประวัติ</a></li>
+	<li <?php echo menu_active('users','users')?>><a href="users/admin/users">สมาชิก</a></li>
+	<li <?php echo menu_active('articles','articles')?>><a href="articles/admin/articles">บทความ</a></li>
+</ul>

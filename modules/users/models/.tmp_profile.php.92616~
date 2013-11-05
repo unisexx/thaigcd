@@ -1,0 +1,13 @@
+<?php
+class User extends ORM {
+
+    var $table = 'users';
+	
+	var $has_one = array("level");
+
+    function __construct($id = NULL)
+    {
+        parent::__construct($id);
+    }
+}
+?>

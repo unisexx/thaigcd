@@ -1,0 +1,44 @@
+ <script language="javascript">
+$(function(){
+	$("input[name='pollBtn2']").click(function(){
+		var p = $(this).parent().parent();
+		if(p.find("input[name=poll]:checked").attr('checked')){
+			
+			$.get("pooll/vote",{id:p.find("input[name=id]").val(),id_ans:p.find("input[name=poll]:checked").val()},function(data){
+				p.parent().find('.poll-result').html(data).show();
+				p.hide();							
+				});
+			}
+		return false;
+	});
+	
+	$("input[name='viewBtn2']").click(function(){
+		var p = $(this).parent().parent();
+			$.get("pooll/view",{id:p.find("input[name=id]").val()},function(data){
+				p.parent().find('.poll-result').html(data).show();
+				p.hide();
+				});
+		return false;
+	});
+});
+</script>
+ <div class="poll">
+                   
+                	<h2><span>โพล สำรวจความคิดเห็น</span></h2>
+ 					<h6><?php echo $rs['title'] ?></h6>
+                    <div>
+                    	<?php foreach($result as $key => $item): ?>
+							<p><input type="radio" name="poll" value="<?php echo $item['id'] ?>"/><label><?php echo $item['name'] ?></label></p>
+						<?php endforeach ?>
+                        <p><input class="input-button" type="submit" name="pollBtn2" value="ตกลง" /><input class="input-button" type="button" name="viewBtn2" value="ดูผลโหวต" /></p>
+                        <input type="hidden" name="id" value="<?php echo $rs['id'] ?>" /></form>
+                    </div>
+  					
+                    <div class="poll-result" style="display:none;">
+
+                    </div>
+                 	
+                  
+                    
+                  
+            </div>

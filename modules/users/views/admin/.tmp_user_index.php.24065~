@@ -1,0 +1,22 @@
+<h1>สมาชิก</h1>
+<?php echo $pagination?>
+<table width="100%" class="list">
+	<tr>
+		<th>ชื่อผู้ใช้</th>
+		<th>อีเมล์</th>
+		<th>ระดับ</th>
+		<th width="90"><a class="btn" href="user/admin/user/form">เพิ่มรายการ</a></th>
+	</tr>
+	<?php foreach($users as $key => $user):?>
+	<tr <?php echo cycle($key)?>>
+		<td><?php echo $user->username?></td>
+		<td><?php echo $user->email?></td>
+		<td><?php echo $user->level->level?></td>
+		<td>
+			<a class="btn" href="user/admin/user/form/<?php echo $user->id?>" >แก้ไข</a>
+			<a class="btn" href="user/admin/user/delete/<?php echo $user->id?>" onclick="return confirm('<?php echo lang('notice_confirm_delete')?>')">ลบ</a>
+		</td>
+	</tr>
+	<?php endforeach?>
+</table>
+<?php echo $pagination?>

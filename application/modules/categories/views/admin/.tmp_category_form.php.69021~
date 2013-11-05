@@ -1,0 +1,24 @@
+<div class="block">
+<h1>หมวดหมู่</h1>
+<form method="post" action="categories/admin/categories/save/<?php echo $category->id?>" enctype="multipart/form-data">
+	<table class="form">
+		<?php if($category->id): ?>
+		<tr>
+			<th>อยู่ในหมวด :</th>
+			<td><?php echo form_dropdown('parents',$$module->category->get_option(),$category->parents)?></td>
+		</tr>
+		<?php endif; ?>
+		<tr>
+			<th>ชื่อ :</th>
+			<td><input type="text" name="name" value="<?php echo $category->name?>" /></td>
+		</tr>
+		<tr>	
+			<th></th>
+			<td>
+		<input type="submit" value="บันทึก" class="submit small" />
+		<input type="button" value="ย้อนกลับ" class="submit small" onclick="window.location = 'categories/admin/categories/<?php echo $module?>'" />
+			</td>
+		</tr>
+	</table>
+</form>
+</div>

@@ -1,0 +1,12 @@
+<?php
+class Herb_model extends MY_Model {
+	
+	public $table = 'herbs';
+	
+    function __construct()
+    {
+        parent::__construct();
+    }
+	
+}
+?>

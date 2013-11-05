@@ -1,0 +1,58 @@
+<?php
+class Pooll extends Public_Controller {
+
+	function __construct()
+	{
+		parent::__construct();	
+		$this->load->model('pooll_model','pooll');
+		$this->load->model('poolldetail_model','detail');
+		$this->load->model('poollans_model','ans');
+	}
+	
+	function index()
+	{
+		$data['breadcrumb'] = breadcrumb(array('herb' => 'สมุนไพร'));
+		if(isset($_GET['search'])) $this->herb->where('name like \'%'.$_GET['search'].'%\' ');
+		$data['result'] = $this->herb->limit(10)->sort('name')->order('asc')->get();
+		$data['pagination'] = $this->herb->pagination();
+		$this->template->build('herb_index',$data);
+	}
+	
+	function view()
+	{
+		$data['result'] = $this->db->getarray("select pooll_detail.*,round((count(pooll_ans.poll_id)/(select count(poll_id) from pooll_ans where poll_id = ".$_GET['id'].")*100),2) percent,count(pooll_ans.id) num
+from pooll_detail left join pooll_ans
+on pooll_detail.id = pooll_ans.ans_id
+where pooll_detail.parent = ".$_GET['id']."
+group by pooll_ans.ans_id
+order by id asc");
+		$this->load->view('pooll_view',$data);
+	}
+	
+	function index_inc()
+	{
+		
+		$data['rs'] = $this->pooll->get_row($this->db->getone('select max(id) from poolls'));
+		$data['result'] = $this->detail->where('parent = '.$data['rs']['id'])->get();
+		$this->load->view('pooll_inc',$data);
+		
+	}
+	
+	function vote()
+	{
+		$save['ip'] = @getIP();
+		$save['poll_id'] = $_GET['id'];
+		$save['ans_id'] = $_GET['id_ans'];
+		$this->ans->save($save);
+		
+		$data['result'] = $this->db->getarray("select pooll_detail.*,round((count(pooll_ans.poll_id)/(select count(poll_id) from pooll_ans where poll_id = ".$_GET['id'].")*100),2) percent,count(pooll_ans.id) num
+from pooll_detail left join pooll_ans
+on pooll_detail.id = pooll_ans.ans_id
+where pooll_detail.parent = ".$_GET['id']."
+group by pooll_ans.ans_id
+order by id asc");
+		$this->load->view('pooll_view',$data);
+	}
+	
+	
+}

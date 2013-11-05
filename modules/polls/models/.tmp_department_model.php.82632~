@@ -1,0 +1,12 @@
+<?php
+class Bureau_model extends MY_Model {
+	
+	public $table = 'aidssti';
+	
+    function __construct()
+    {
+        parent::__construct();
+    }
+	
+}
+?>

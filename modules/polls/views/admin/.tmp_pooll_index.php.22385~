@@ -1,0 +1,22 @@
+<div class="block">
+	<h1>สมุนไพร</h1>
+	<?php echo $pagination;?>
+	<table width="100%" class="table">
+		<tr>
+			<th>รูปภาพ</td>
+			<th>ชื่อสมุนไพร</td>
+			<th class="t-center" width="90"><a class="btn"  href="herb/admin/herb/form" class="tiny">เพิ่มรายการ</a></th>
+		</tr>
+		<?php foreach($result as $key => $item):?>
+		<tr <?php echo cycle($key)?>>
+			<td><img style="width:100px;" src="uploads/herb/<?php echo $item['image'] ?>"></td>
+			<td><?php echo $item['name']?></td>
+			<td>
+				<a class="btn" href="herb/admin/herb/form/<?php echo $item['id']?>" class="btn"><?php echo BTN_EDIT?></a>
+				<a class="btn" href="herb/admin/herb/delete/<?php echo $item['id']?>" class="btn" onclick="return confirm('<?php echo NOTICE_CONFIRM_DELETE?>')"><?php echo BTN_DELETE?></a>
+			</td>
+		</tr>
+		<?php endforeach?>
+	</table>
+	<?php echo $pagination?>
+</div>

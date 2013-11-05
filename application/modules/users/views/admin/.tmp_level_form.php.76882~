@@ -1,0 +1,22 @@
+<h1>สิทธิการเข้าใช้</h1>
+<form method="post" action="users/admin/levels/save/<?php echo $level->id?>" enctype="multipart/form-data">
+	<table class="form">
+		<tr><th>Level :</th><td><input type="text" name="level" value="<?php echo $level->level ?>" /></td></tr>
+		<tr><th>Is Admin :</th><td><input type="checkbox" name="is_admin" value="1" <?php echo ($level->is_admin == "1")?'checked="checked"':'' ?>?></td></tr>
+	</table>
+	<table class="list">
+		<tr><th style="width:250px;">Module</th><th style="width:80px;">Publish</th><th style="width:80px;">Add</th><th style="width:80px;">Edit</th><th style="width:80px;">Delete</th><th style="width:80px;">Approve</th><th></th></tr>
+		<?php foreach($modules as $module): ?>
+		<tr>
+			<td><?php echo $module->name ?></td>
+			<td><input type="checkbox" name="module[<?php echo $module->module?>][index]" value="1" <?php echo (@$level->auth->{$module->module}->{'index'} == 1)?'checked="checked"':''; ?> /></td>
+			<td><input type="checkbox" name="module[<?php echo $module->module?>][add]" value="1" <?php echo (@$level->auth->{$module->module}->{'add'} == 1)?'checked="checked"':''; ?> /></td>
+			<td><input type="checkbox" name="module[<?php echo $module->module?>][edit]" value="1" <?php echo (@$level->auth->{$module->module}->{'edit'} == 1)?'checked="checked"':''; ?> /></td>
+			<td><input type="checkbox" name="module[<?php echo $module->module?>][delete]" value="1" <?php echo (@$level->auth->{$module->module}->{'delete'} == 1)?'checked="checked"':''; ?> /></td>
+			<td><input type="checkbox" name="module[<?php echo $module->module?>][approve]" value="1" <?php echo (@$level->auth->{$module->module}->{'approve'} == 1)?'checked="checked"':''; ?> /></td>
+			<td></td>
+		</tr>
+		<?php endforeach; ?>
+	</table>
+		<input type="submit" value="บันทึก" />
+</form>
