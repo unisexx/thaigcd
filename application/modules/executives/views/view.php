@@ -21,7 +21,7 @@
 	</div>
 	
 	
-	<hr style="margin:25px 0;">
+	<!-- <hr style="margin:25px 0;">
 	<h1 style="font-size: 18px; color:brown;">ข่าวสารผู้บริหารทั้งหมด</h1>
 	<div class="box-executive-news">
 		<ul>
@@ -29,5 +29,5 @@
   			<li>- <a href="executives/view/<?php echo $row->id?>"><?php echo lang_decode($row->title)?></a></li>
   		<?php endforeach;?>
   		</ul>
-	</div>
+	</div> -->
 </div><!--data-->

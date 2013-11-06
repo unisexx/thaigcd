@@ -47,7 +47,7 @@
 					<li>- <a href="executives/info_view/<?php echo $info->id?>"><?php echo $info->title?></a></li>
 				<?php endforeach;?>
 			</ul>
-			<div class="more"><a href="executives/info_view/<?php echo $info->id?>">อ่านต่อ</a></div>
+			<!-- <div class="more"><a href="executives/info_view/<?php echo $info->id?>">อ่านต่อ</a></div> -->
 		</div>
 		<div class="executive" style="margin-top:10px;">
 			<h3>ข่าวสารผู้บริหาร</h3>
@@ -56,7 +56,7 @@
 					<li>- <a href="executives/view/<?php echo $executive->id?>"><?php echo lang_decode($executive->title)?></a></li>
 				<?php endforeach;?>
 			</ul>
-			<div class="more"><a href="executives/view/<?php echo $executive->id?>">อ่านต่อ</a></div>
+			<!-- <div class="more"><a href="executives/view/<?php echo $executive->id?>">อ่านต่อ</a></div> -->
 		</div>
 		<div class="executive" style="margin-top:10px;">
 			<h3>ผู้บริหารเทคโนโลยีสารสนเทศระดับสูง สำนักโรคติดต่อทั่วไป</h3>
@@ -65,7 +65,7 @@
 					<li>- <a href="executives/it_view/<?php echo $it->id?>"><?php echo lang_decode($it->title)?></a></li>
 				<?php endforeach;?>
 			</ul>
-			<div class="more"><a href="executives/it_view/<?php echo $it->id?>">อ่านต่อ</a></div>
+			<!-- <div class="more"><a href="executives/it_view/<?php echo $it->id?>">อ่านต่อ</a></div> -->
 		</div>
 	</div>
 	<br clear="all">
