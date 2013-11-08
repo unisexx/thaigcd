@@ -107,7 +107,7 @@ class Executives extends Public_Controller
 		$this->template->build('info_view',$data);
 	}
 	
-	function it_view($id)
+	function it_view($id=false)
 	{
 		$data['executive'] = new Executive_it($id);
 		
