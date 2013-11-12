@@ -1,6 +1,3 @@
-<style>
-	li{list-style-type:none !important; margin-left: 20px !important;}
-</style>
 <div class="topic"><img src="<?php echo topic("topic_executives.png") ?>" height="25" width="200"></div>
 <div id="data"> 
 	<div class="clear"></div>

@@ -1,10 +1,9 @@
 <style>
-	li{list-style-type:none !important; margin-left: 20px !important;}
 	.more a{float:right; font-size:10px;color:purple;font-weight;bold;}
 	h3{font-size:16px; color:brown;}
 </style>
 <div class="topic"><img src="<?php echo topic("topic_executives.png") ?>" height="25" width="200"></div>
-<div id="data">
+<div id="data" class="dexclutive">
 	<!-- <?php foreach($users as $user): ?>
 	<div class="box-executive"> 
 		<img src="uploads/users/<?php echo $user->profile->avatar ?>" class="executivephoto" height="140" width="140">

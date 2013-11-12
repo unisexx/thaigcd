@@ -1,8 +1,5 @@
-<style>
-	li{list-style-type:none !important; margin-left: 20px !important;}
-</style>
 <div class="topic"><img src="<?php echo topic("topic_executives.png") ?>" height="25" width="200"></div>
-<div id="data"> 
+<div id="data" class="dexclutive"> 
 	<!-- <div class="box-executive"> 
 		<img src="uploads/users/<?php echo $executive->user->profile->avatar ?>" class="executivephoto" height="140" width="140">
 		<div class="box_info">

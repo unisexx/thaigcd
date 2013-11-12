@@ -536,3 +536,5 @@ form p.search  input[type=text]{width:130px; padding:2px 5px;}
 
 
 .tbchild{font-size:12px;background:#fff;margin:0;width:100%;border-collapse:collapse;text-align:left}.tbchild th{font-size:13px;font-weight:700;background:#f3f3f3;color:#999;padding:3px;border-bottom:1px solid #ccc;border-top:1px solid #ccc;border-left:1px solid #ccc;border-right:1px solid #ccc}.tbchild td{padding:5px;border-top:0 solid #ccc;border-bottom:1px solid #ccc;border-left:0 solid #ccc;border-right:0 solid #ccc}.tbchildform{font-size:12px;background:#fff;margin:0;width:100%;border-collapse:collapse;text-align:left}.tbchildform th{font-size:13px;font-weight:700;background:#f3f3f3;color:#333;padding:3px;border-bottom:1px solid #ccc;border-top:1px solid #ccc;border-left:1px solid #ccc;border-right:1px solid #ccc}.tbchildform td{padding:5px;border-top:1px solid #ccc;border-bottom:1px solid #ccc;border-left:0 solid #ccc;border-right:1px solid #ccc}
+
+.dexclutive li{list-style-type:none !important; margin-left: 20px !important;}
