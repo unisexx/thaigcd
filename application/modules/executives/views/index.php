@@ -65,7 +65,7 @@
 					<li>- <a href="executives/it_view/<?php echo $it->id?>"><?php echo lang_decode($it->title)?></a></li>
 				<?php endforeach;?>
 			</ul>
-			<!-- <div class="more"><a href="executives/it_view">อ่านต่อ</a></div> -->
+			<div class="more"><a href="executives/more/news">อ่านต่อ</a></div>
 		</div>
 	</div>
 	<br clear="all">
