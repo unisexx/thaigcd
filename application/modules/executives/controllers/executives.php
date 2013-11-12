@@ -1,7 +1,6 @@
 <?php
 class Executives extends Public_Controller
 {
-	
 	function __construct()
 	{
 		parent::__construct();
@@ -142,6 +141,5 @@ class Executives extends Public_Controller
 		$data['videos']->order_by('id','desc')->get();
 		$this->template->build('video_view',$data);
 	}
-
 }
 ?>
