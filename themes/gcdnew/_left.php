@@ -35,6 +35,8 @@
                     <li><a href="documents"><img src="themes/gcdnew/photo/bann_keepdoc.jpg" width="248" height="69" alt="ระบบจัดเก็บเอกสาร"/></a></li>
 					<li><a href="calendars"><img src="themes/gcdnew/photo/bann_actcalendar.jpg" width="248" height="69" alt="ปฎิทินกิจกรรม" /></a></li>
 					
+					<li><a href="http://kmddc.go.th/page/35" target="_blank"><img src="themes/gcdnew/photo/49442.jpg" width="248" height="69" alt="ปฎิทินกิจกรรม" /></a></li>
+					
                     <!-- <li><a href="blogs"><img src="themes/gcdnew/photo/bann_blog.jpg" width="248" height="69" alt="เว็บบล็อก weblog"/></a></li>
                     <li><a href="webboards"><img src="themes/gcdnew/photo/bann_webboard.jpg" width="248" height="69" alt="เว็บบอร์ด"/></a></li>
                     <li><a href="chats"><img src="themes/gcdnew/photo/bann_chat.jpg" width="248" height="69" alt="ระบบสนทนาออนไลน์"/></a></li>
