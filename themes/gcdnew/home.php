@@ -77,7 +77,7 @@
 	<? include "_footer.php";?>
 </div><!--dvfooter-->
 
-<script>
+<!-- <script>
   $(function() {
     $( "#dialog" ).dialog({
         modal: true,
@@ -88,6 +88,6 @@
 <div id="dialog" title="ประกาศ">
   <img src="http://image.free.in.th/v/2013/ie/131105011314.jpg">
   <br><div>ขอถวายความอาลัยแด่ สมเด็จพระญาณสังวร สมเด็จพระสังฆราช สกลมหาสังฆปรินายก</div>
-</div>
+</div> -->
 </body>
 </html>
