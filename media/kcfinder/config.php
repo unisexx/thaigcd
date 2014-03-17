@@ -40,7 +40,7 @@ $_CONFIG = array(
         'images'  =>  "*img",
 		
 		// Custom types 
-		'pdf'  =>  "pdf xls xlsx doc docx",
+		'pdf'  =>  "pdf xls xlsx doc docx zip rar",
 		'mediafiles'  =>  "mp3 mp4 flv",
 		'mediapublics'  =>  "",
 		'english_zones'  =>  "",

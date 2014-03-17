@@ -48,7 +48,7 @@ $(function(){
 	<tr><th>หมวดหมู่ :</th><td><?php echo form_dropdown('category_id',$information->category->get_option(),$information->category_id,'');?></td></tr>
 	<tr><th>เริ่ม :</th><td><input type="text" name="start_date" value="<?php echo DB2Date(($information->start_date)?$information->start_date:date("Y-m-d"))?>" class="datepicker" /></td></tr>
 	<tr><th>สิ้นสุด :</th><td><input type="text" name="end_date" value="<?php echo DB2Date($information->end_date)?>" class="datepicker" /></td></tr>
-	<tr><th>ไฟล์เอกสาร :</th><td><input type="text" name="pdf" value="<?php echo $information->pdf?>"/><input type="button" name="browse" value="เลือกไฟล์" onclick="browser($(this).prev(),'pdf')" />(อนุญาติเฉพาะไฟล์นามสกุล  pdf, xls, xlsx, doc และ docx)</td></tr>
+	<tr><th>ไฟล์เอกสาร :</th><td><input type="text" name="pdf" value="<?php echo $information->pdf?>"/><input type="button" name="browse" value="เลือกไฟล์" onclick="browser($(this).prev(),'pdf')" />(อนุญาติเฉพาะไฟล์นามสกุล  pdf, xls, xlsx, doc,  docx, zip และ rar)</td></tr>
 	<tr><th>แท็ก :</th><td><small>กด Enter เพื่อเพิ่มแท็ก</small><br /><input type="text" name="tag" value="" /></td></tr>
 	<tr><th>ที่มา :</th><td><input type="text" name="refer" value="<?php echo $information->refer?>" /></td></tr>
 	<tr>
