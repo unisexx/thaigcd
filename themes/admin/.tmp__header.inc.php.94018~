@@ -1,3 +1,0 @@
-<div id="site-info"><strong>Site:</strong> <a href="home">Winary.in.th</a></div>
-<div id="login-info"><strong>Login as:</strong> <?php echo login_data('display') ?>	| <a href="user/admin/auth/logout" onclick="return confirm('ยืนยันการออกจากระบบ')" >Logout</a></div> 
-<div class="clear"></div>

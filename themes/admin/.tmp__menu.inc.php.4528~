@@ -1,7 +1,0 @@
-<ul class="menu">
-	<li <?php echo menu_active('user','profile')?>><a href="user/admin/">Profile</a></li>
-	<li <?php echo menu_active('news')?>><a href="news/admin/news">News</a></li>
-	<li <?php echo menu_active('user','user')?>><a href="user/admin/user">User</a></li>
-	<li <?php echo menu_active('journal')?>><a href="journal/admin/journal">Journal</a></li>
-	<li <?php echo menu_active('news1')?>><a href="news/admin/news">Link</a></li>
-</ul>

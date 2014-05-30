@@ -8,15 +8,15 @@ class English_zones extends Public_Controller
 	
 	function index()
 	{
-		if(!is_login()) 
-		{
-			set_notify('error','คุณไม่มีสิทธิเข้าใช้งานในส่วนนี้ค่ะ');
-			redirect('home');
-		}
+		// if(!is_login()) 
+		// {
+			// set_notify('error','คุณไม่มีสิทธิเข้าใช้งานในส่วนนี้ค่ะ');
+			// redirect('home');
+		// }
 		$this->template->set_layout('layout_blank');
 		$data['english_zones'] = new English_zone();
 		(@$_GET['search'])?$data['english_zones']->like('title','%'.$_GET['search'].'%'):'';
-		$data['english_zones']->order_by('id','desc')->get_page(); 
+		$data['english_zones']->where('status = "approve"')->order_by('id','desc')->get_page(); 
 		$this->template->build('english_zone_index',$data);
 	}
 	
