@@ -30,7 +30,10 @@
 <div id="advs"><!--<a href="av_search.php" class="TxtGray2 f10 link_advs">advanced search</a>--></div>
 </div>
 
-<div id="flag"><a href="home/lang/th" class="thai">Thai Flag</a><a href="home/lang/en" class="eng">Eng Flag</a></div>
+<div id="flag" style="color:white;">
+	<!-- <a href="home/lang/th" class="thai">Thai Flag</a><a href="home/lang/en" class="eng">Eng Flag</a> -->
+	<a href="home/lang/th" style="color:white;">THAI</a> | <a href="http://thaigcd.ddc.moph.go.th/en/" style="color:white;">ENGLISH</a>
+</div>
 
 <?php if(@$this->session->userdata('lang') == "th"):?>
 <div id="menu">

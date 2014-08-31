@@ -9,7 +9,7 @@ $(document).ready(function() {
          defaultSeriesType: 'column'
       },
       title: {
-         text: 'สถิติการเพิ่มบทความแต่ละประเถทแบ่งตามกลุ่มงาน'
+         text: 'สถิติการเพิ่มบทความแต่ละประเภทแบ่งตามกลุ่มงาน'
       },
       xAxis: {
          categories: [
@@ -69,5 +69,5 @@ $(document).ready(function() {
    });
 });	
 </script>
-<h1>สถิติการเพิ่มบทความแต่ละประเถทแบ่งตามกลุ่มงาน</h1>
+<h1>สถิติการเพิ่มบทความแต่ละประเภทแบ่งตามกลุ่มงาน</h1>
 <div id="chart" style="width: 100%; height: 600px; margin: 0 auto"></div>
