@@ -1,7 +1,26 @@
+<?if($this->uri->segment(3) == 58):?>
+	<?if($_POST['p'] == 'gcddrivercar'):?>
+		<div class="topic cufon"><span style="color:#8E4F3B;"><?php echo lang_decode($page->title) ?></span></div>
+		<div id="data">
+	<?php echo lang_decode($page->detail) ?>
+	<?else:?>
+	<div id="data">
+	<center style="margin: 30px 0;">
+		<form method="post">
+			กรุณาใส่รหัสเข้าชม<br>
+			<input type="password" name="p" value="">
+			<input type="submit" value="submit">
+		</form>
+	</center>
+	<?endif;?>
+
+<?else:?>
 <div class="topic cufon"><span style="color:#8E4F3B;"><?php echo lang_decode($page->title) ?></span></div>
 <div id="data">
 	<?php echo lang_decode($page->detail) ?>
-	<?php if($page->slug == 'contactus'): ?>
+<?endif;?>
+
+<?php if($page->slug == 'contactus'): ?>
 <script type="text/javascript">
 	$(function(){
 		$(".contact_form form").validate({
