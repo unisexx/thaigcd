@@ -10,10 +10,15 @@
 	<span class="TxtBlue2 f11">© 2010 Bureau of General Communicable Disease. All rights reserved<br />
     E-mail : <a href="mailto:webmaster@thaigcd.ddc.moph.go.th">webmaster@thaigcd.ddc.moph.go.th</a></span>
 	<div id="pageviews">
-	<h3 class="cufon">สถิติผู้เข้าชม</h3>
+	<h3>สถิติผู้เข้าชม</h3>
 	<!--
 		<img src="media/images/ajax-loader2.gif" style="margin:5px 18px;" />
 	-->	
 	<?php echo modules::run('dashboards/inc_home'); ?>
 	</div>
 </div>
+
+<a id="footer-back-to-top" class="WhiteButton badge-back-to-top offscreen">
+    <strong>Back to Top</strong>
+    <span></span>
+</a>

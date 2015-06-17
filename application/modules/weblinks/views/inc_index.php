@@ -44,7 +44,8 @@ $(function(){
 });
 </script>
 
-<img src="<?php echo topic("topic_weblink.png") ?>" width="130" height="18" style="float:left;" />
+
+<img class="weblink_topic" src="<?php echo topic("topic_weblink.png") ?>" width="130" height="18" style="float:left;" alt="เว็บไซต์ที่เกี่ยวข้อง" />
 <div id="linkgroup" class="tab B">
     <ul>
     	<?php foreach($categories as $category):?>
@@ -52,14 +53,15 @@ $(function(){
 		<?php endforeach;?>
     </ul>
 	<br class="clear">
+	
     <div>
 		<?php foreach($categories as $key => $category):?>
-			<div id="tab_<?php echo $key + 1?>">
-				<MARQUEE width="930" scrollamount='1.5' scrolldelay='1' onmouseover='this.stop();' onmouseout='this.start();'>
+			<div id="tab_<?php echo $key + 1?>" style="height:85px; overflow:hidden;">
+				<!-- <MARQUEE width="930" scrollamount='1.5' scrolldelay='1' onmouseover='this.stop();' onmouseout='this.start();'> -->
 				<?php foreach($category->weblink as $weblink):?>
 					<a href="<?php echo $weblink->url?>" target="<?php echo $weblink->target?>"><img src="uploads/weblinks/<?php echo $weblink->image?>" alt="<?php echo lang_decode($weblink->title)?>" title="<?php echo lang_decode($weblink->title)?>" width="98" height="90" /></a>
 				<?php endforeach;?>
-				</MARQUEE>
+				<!-- </MARQUEE> -->
 			</div>
 		<?php endforeach;?>
     </div>

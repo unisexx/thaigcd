@@ -26,16 +26,20 @@
             <div id="banner">
             	<ul>
             		<li><a href="http://www.pinkforms.com" target="_blank"><img src="themes/gcdnew/photo/bann_pinkforms.jpg" width="248" height="69" alt="ระบบออกแบบใบรับรองการผลิด pinkform" /></a></li>
+            		<li><a href="http://support.ddc.moph.go.th/dT_Report/#" target="_blank"><img src="themes/gcdnew/photo/bann_vaccine.jpg" width="248" height="69" alt="ระบบรายงานผลการรณรงค์ให้วัคซีน dT" /></a></li>
+            		<li><a href="http://support.ddc.moph.go.th/gcd_vaccine_report" target="_blank"><img src="themes/gcdnew/photo/bann_gcd_vaccine_report.jpg" width="248" height="69" alt="ระบยรายงานผลวัคซีน dT,MR,FLU ปี 2558" /></a></li>
+            		<li><a href="http://dpis.ddc.moph.go.th:8080/admin/index.html" target="_blank"><img src="themes/gcdnew/photo/bann_dpis.jpg" width="248" height="69" alt="dpis"/></a></li>
                     <!--<li><a href="http://r36.ddc.moph.go.th/index.html" target="_blank"><img src="themes/gcdnew/photo/bann_dog.jpg" width="248" height="69" alt="โปรแกรมผู้สัมผัสพิษสุนัขบ้า"/></a></li>
                     <li><a href="http://thaileptoclub.org/index.php"><img src="themes/gcdnew/images/lebto.jpg" width="248" height="69" alt="Lepto"/></a></li> -->
+                    <li><a href="http://www.sasuk12.com/umrak/" target="_blank"><img src="themes/gcdnew/images/barner-zzz.jpg" width="248" height="69" alt="ระบบลงทะเบียนตรวจสุขภาพ"/></a></li>
                     <li><a href="http://thaigcd.ddc.moph.go.th/asset_gcd/user/admin/user/index" target="_blank"><img src="themes/gcdnew/photo/banner_asset_gcd.jpg" width="248" height="69" alt="ระบบฐานข้อมูลครุภัณฑ์คอมพิวเตอร์"/></a></li>
                     <li><a href="http://thaigcd.ddc.moph.go.th/human_new/index.php" target="_blank"><img src="themes/gcdnew/photo/banner_human_new.jpg" width="248" height="69" alt="ระบบบริหารทรัพยากรบุคคล"/></a></li>
-                    <li><a href="meetings"><img src="themes/gcdnew/photo/bann_regmeeting.jpg" width="248" height="69" alt="ระบบจัดการประชุม"/></a></li>
-                    <li><a href="docs"><img src="themes/gcdnew/photo/bann_questionnarie.jpg" width="248" height="69" alt="ระบบจัดทำแบบสอบถามออนไลน์" /></a></li>
-                    <li><a href="documents"><img src="themes/gcdnew/photo/bann_keepdoc.jpg" width="248" height="69" alt="ระบบจัดเก็บเอกสาร"/></a></li>
-					<li><a href="calendars"><img src="themes/gcdnew/photo/bann_actcalendar.jpg" width="248" height="69" alt="ปฎิทินกิจกรรม" /></a></li>
+                    <li><a href="meetings" target="_blank"><img src="themes/gcdnew/photo/bann_regmeeting.jpg" width="248" height="69" alt="ระบบจัดการประชุม"/></a></li>
+                    <li><a href="docs" target="_blank"><img src="themes/gcdnew/photo/bann_questionnarie.jpg" width="248" height="69" alt="ระบบจัดทำแบบสอบถามออนไลน์" /></a></li>
+                    <li><a href="documents" target="_blank"><img src="themes/gcdnew/photo/bann_keepdoc.jpg" width="248" height="69" alt="ระบบจัดเก็บเอกสาร"/></a></li>
+					<li><a href="calendars" target="_blank"><img src="themes/gcdnew/photo/bann_actcalendar.jpg" width="248" height="69" alt="ปฎิทินกิจกรรม" /></a></li>
 					
-					<li><a href="http://kmddc.go.th/page/35" target="_blank"><img src="themes/gcdnew/photo/49442.jpg" width="248" height="69" alt="ปฎิทินกิจกรรม" /></a></li>
+					<!-- <li><a href="http://kmddc.go.th/page/35" target="_blank"><img src="themes/gcdnew/photo/49442.jpg" width="248" height="69" alt="ปฎิทินกิจกรรม" /></a></li> -->
 					
                     <!-- <li><a href="blogs"><img src="themes/gcdnew/photo/bann_blog.jpg" width="248" height="69" alt="เว็บบล็อก weblog"/></a></li>
                     <li><a href="webboards"><img src="themes/gcdnew/photo/bann_webboard.jpg" width="248" height="69" alt="เว็บบอร์ด"/></a></li>

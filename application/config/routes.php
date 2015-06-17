@@ -32,7 +32,7 @@
 | would be loaded.
 */
 
-$route['default_controller'] = "home";
+$route['default_controller'] = "home/first_page";
 $route['blogs/admin/blogs'] = "blogs/admin/blogs/index";
 $route['blogs/newblog'] = "blogs/newblog";
 $route['blogs/newentry'] = "blogs/newentry";

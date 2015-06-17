@@ -31,7 +31,7 @@
             });
         </script>
 
-<div class="topic"><img src="themes/thaigcd/images/topic_calendar.png" /></div>
+<div class="topic"><img class="topic_carendar" src="themes/thaigcd/images/topic_calendar.png" /></div>
 
 <div id="data">
 <form method="get">

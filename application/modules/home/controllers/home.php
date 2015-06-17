@@ -8,6 +8,17 @@ class Home extends Public_Controller {
 			
 	}
 	
+	function first_page()
+	{
+		$coverpage = new Coverpage();
+		$coverpage->where("status = 'approve' and active = 1")->get();
+		if($coverpage->id != ""){
+			redirect("coverpages/index/".$coverpage->id);
+		}else{
+			redirect("home/index");
+		}
+	}
+	
 	function index()
 	{
 		$this->template->set_layout('home');
@@ -59,7 +70,6 @@ class Home extends Public_Controller {
 		$popup->counter('1');
 		$data=$popup->get_by_id('1');					
 		echo $data->counter;
-											
 	}
 }
 

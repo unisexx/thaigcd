@@ -1,4 +1,4 @@
-<div class="topic"><img src="<?php echo topic("topic_notice.png") ?>" width="200" height="25"></div>
+<div class="topic"><img class="topic_notice" src="<?php echo topic("topic_notice.png") ?>" width="200" height="25"></div>
 	<div id="data">
 		<form action="" method="get">
 		<p class="search">

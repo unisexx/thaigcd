@@ -1,4 +1,5 @@
 <ul class="menu">
+	<?php if(is_publish('coverpages')): ?><li <?php echo menu_active('coverpages','coverpages')?> ><a href="coverpages/admin/coverpages">หน้าแรก</a></li><?php endif; ?>
 	<?php if(is_superadmin()): ?>
 	<li <?php echo menu_active('dashboards','dashboards')?>><a href="dashboards/admin/dashboards">สถิติโดยรวม</a></li>
 	<li <?php echo menu_active('dashboards','overview')?>><a href="dashboards/admin/overview">สถิติเนื้อหาแบ่งตามกลุ่มงาน</a></li>
@@ -15,7 +16,9 @@
 	<?php if(is_publish('notices')): ?><li <?php echo menu_active('notices','notices')?>><a href="notices/admin/notices">ประกาศ/จัดจ้าง</a> <?php echo anchor('notices/admin/notices?status=draft',draft('notice'),'class="nopadding"') ?></li><?php endif; ?>
 	<?php if(is_publish('laws')): ?><li <?php echo menu_active('laws','laws')?>><a href="laws/admin/laws">กฎหมายที่เกี่ยวข้อง</a><?php echo anchor('laws/admin/laws?status=draft',draft('law'),'class="nopadding"') ?></li><?php endif; ?>
 	<?php if(is_publish('mediapublics')): ?><li <?php echo menu_active('mediapublics','mediapublics')?>><a href="mediapublics/admin/mediapublics">สื่อเผยแพร่</a> <?php echo anchor('mediapublics/admin/mediapublics?status=draft',draft('mediapublic'),'class="nopadding"') ?></li><?php endif; ?>
-	<?php if(is_publish('academics')): ?><li <?php echo menu_active('academics','academics')?>><a href="academics/admin/academics">ศูนย์รวมวิชาการ</a> <?php echo anchor('academics/admin/academics?status=draft',draft('academic'),'class="nopadding"') ?></li><?php endif; ?>
+	
+	<!--<?php if(is_publish('academics')): ?><li <?php echo menu_active('academics','academics')?>><a href="academics/admin/academics">ศูนย์รวมวิชาการ</a> <?php echo anchor('academics/admin/academics?status=draft',draft('academic'),'class="nopadding"') ?></li><?php endif; ?>-->
+	
 	<?php if(is_publish('knowledges')): ?><li <?php echo menu_active('knowledges','knowledges')?>><a href="knowledges/admin/knowledges">ความรู้วิชาการ</a> <?php echo anchor('knowledges/admin/knowledges?status=draft',draft('knowledge'),'class="nopadding"') ?></li><?php endif; ?>
 	<?php if(is_publish('polls')): ?><li <?php echo menu_active('polls','polls')?>><a href="polls/admin/polls">โพล</a></li><?php endif; ?>
 	<?php if(is_publish('galleries')): ?><li <?php echo menu_active('galleries','categories')?>><a href="galleries/admin/categories">ภาพถ่ายกิจกรรม</a> <?php echo anchor('galleries/admin/categories?status=draft',draft('category'),'class="nopadding"') ?></li><?php endif; ?>

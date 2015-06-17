@@ -63,7 +63,13 @@ class Pages extends Public_Controller
 		$this->template->build('page_index',$data);
 	}
 	
-	
+	function txtslide($id=66){
+		$data['page'] = new Page($id);
+		$this->load->view('txtslide',$data);
+		// echo'<div id="marquee">
+				// <marquee  align="middle" scrollamount="5" scrolldelay="91" onmouseover="this.stop();" onmouseout="this.start();">'.lang_decode($page->detail).'</marquee>
+			// </div>';
+	}
 	
 }
 ?>

@@ -28,6 +28,11 @@ $(function(){
         	<div class="topic"><img src="<?php echo topic("topic_newsletter.png") ?>" width="200" height="25" alt="ช่องทางรับข่าวสาร" /></div>
 
 		<form id="frmnewsletter" method="post" action="newsletters/newsletter_mail_submit">
-			<div id="newsletter"><input id="email" type="text" name="email" class="textbox TxtGray" value="email address"/><input name="submit" type="submit" class="btn_go"/></div>
+			<div id="newsletter">
+				<label for="email" style="display: none;">email</label>
+				<input id="email" type="text" name="email" class="textbox TxtGray" value="email address"/>
+				<label for="btn_go" style="display: none;">btn_go</label>
+				<input name="submit" type="submit" class="btn_go" id="btn_go" value="submit"/>
+			</div>
 		<div class="clear"></div>
 		</form>

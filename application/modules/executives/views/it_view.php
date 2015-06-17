@@ -1,4 +1,4 @@
-<div class="topic"><img src="<?php echo topic("topic_executives.png") ?>" height="25" width="200"></div>
+<div class="topic"><img class="topic_executives" src="<?php echo topic("topic_executives.png") ?>" height="25" width="200"></div>
 <div id="data"> 
 	<div class="clear"></div>
 	<div class="box-executive-news">

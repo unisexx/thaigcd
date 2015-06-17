@@ -5,7 +5,7 @@ class User extends ORM {
 	
 	public $has_one = array("level","profile","group","blog");
 	
-	public $has_many = array("poll","document","topic","category","article","information","notice","law","knowledge"
+	public $has_many = array("coverpage","poll","document","topic","category","article","information","notice","law","knowledge"
 	,"gallery","weblink","faq","mediafile","executive","webboard_quiz"
 	,"webboard_answer","page","chat","mediapublic","academic",'blogcomment'
 	,'webboard_relate_del','calendar',"newsletter","hilight","webboard_status_config"

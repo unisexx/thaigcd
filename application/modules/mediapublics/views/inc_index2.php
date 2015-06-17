@@ -1,6 +1,6 @@
 <div class="corner" id="boxlaw">
 	<a class="moreright" href="mediapublics/index/<?php echo $group_id?>">more</a>
-	<div class="topic"><img src="themes/gcdnew/images/topic_media.png"></div>		
+	<div class="topic"><img src="themes/gcdnew/images/topic_media.png" alt="สื่อเผยแพร่"></div>		
 	<div id="medialist">
 		<ul>
 		<?php foreach($media as $mediapublic):?>

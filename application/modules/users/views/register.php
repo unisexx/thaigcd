@@ -55,7 +55,7 @@ $(function(){
 		},
 		_password:
 		{
-			equalTo: "#password"
+			equalTo: "#passwordss"
 		},
 		first_name: 
 		{ 
@@ -136,7 +136,7 @@ $(function(){
 			</tr>
 			<tr>
 				<td align="right"><strong>พิมพ์รหัสผ่าน :<span class="TxtRed"> *</span></strong></td>
-				<td><input type="password" class="textboxRegister" name="password" id="password" /></td>
+				<td><input type="password" class="textboxRegister" name="password" id="passwordss" /></td>
 			</tr>
  			<tr>
 				<td align="right"><strong>ยืนยันรหัสผ่าน : <span class="TxtRed">*</span></strong></td>

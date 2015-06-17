@@ -45,9 +45,9 @@
 		                        <div class="box_info">
 		                        <span><?php echo $mediafile->created?></span>
 		                        <?php if($mediafile->category->id == 39):?>
-								<img width="14" height="11" src="themes/gcdnew/images/ico_vdo.png" />
+								<img width="14" height="11" src="themes/gcdnew/images/ico_vdo.png" alt="วิดีโอคลิป" />
 								<?php else:?>
-								<img width="20" height="10" src="themes/gcdnew/images/ico_mp3.png" />
+								<img width="20" height="10" src="themes/gcdnew/images/ico_mp3.png" alt="เสียง" />
 								<?php endif;?>
 								<a rel='ajax' href="<?php echo $mediafile->id?>"><h3><?php echo lang_decode($mediafile->title)?></h3></a>
 		                      </div>  

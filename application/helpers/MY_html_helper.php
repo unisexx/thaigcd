@@ -142,7 +142,7 @@ function icon_new($orm)
 {
 	if(datediff($orm->start_date)>=(-5))
 	{
-	return '<img src="themes/gcdnew/images/new_icon.png" style="float:none; padding:0; border:none;" />';
+	return '<img src="themes/gcdnew/images/new_icon.png" style="float:none; padding:0; border:none;" alt="บทความใหม่" />';
 	}
 }
 
@@ -150,7 +150,7 @@ function icon_file($file)
 {
 	if($file)
 	{
-	return '<img src="media/kcfinder/themes/oxygen/img/files/small/'.pathinfo($file, PATHINFO_EXTENSION).'.png"  style="float:none; padding:0; border:none;"  />';
+	return '<img src="media/kcfinder/themes/oxygen/img/files/small/'.pathinfo($file, PATHINFO_EXTENSION).'.png"  style="float:none; padding:0; border:none;" alt="'.$file.'"  />';
 	}
 	else
 	{
@@ -189,9 +189,9 @@ function fix_file(&$files)
 
 function thumb($imgUrl,$width,$height,$zoom_and_crop,$param = NULL){
 	if(strpos($imgUrl, "http://") !== false){
-		return "<img ".$param." src=".$imgUrl." width=".$width." height=".$height.">";
+		return "<img ".$param." src=".$imgUrl." width=".$width." height=".$height." alt='ภาพกิจกรรม'>";
 	}else{
-		return "<img ".$param." src=".site_url("media/timthumb/timthumb.php?src=".site_url($imgUrl)."&zc=".$zoom_and_crop."&w=".$width."&h=".$height)." width=".$width." height=".$height.">";
+		return "<img ".$param." src=".site_url("media/timthumb/timthumb.php?src=".site_url($imgUrl)."&zc=".$zoom_and_crop."&w=".$width."&h=".$height)." width=".$width." height=".$height." alt='ภาพกิจกรรม'>";
 	}
 }
 

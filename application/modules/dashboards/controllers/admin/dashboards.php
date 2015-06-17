@@ -11,7 +11,7 @@ class Dashboards extends Admin_Controller
 	function index()
 	{
 
-		$this->ga->authen('fdsiakrin@gmail.com','f@vourite','ga:43749961');
+		$this->ga->authen('fdsiakrin@gmail.com','K2aP5GY5','ga:43749961');
 		if($_GET)
 		{
 			$now=Date2DB($_GET['date']);

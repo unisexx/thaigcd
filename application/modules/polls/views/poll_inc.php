@@ -25,7 +25,7 @@ $(function(){
 	});
 });
 </script>
-<a class="moreleft" href="polls">more</a>
+<a target="_self" class="moreleft" href="polls">more</a>
 <div class="topic"><img width="200" height="25" alt="แบบสำรวจความคิดเห็น" src="themes/gcdnew/images/topic_poll.png"></div>
 <div id="poll">
 	<h3 class="B f14"><?php echo $poll->title ?></h3>

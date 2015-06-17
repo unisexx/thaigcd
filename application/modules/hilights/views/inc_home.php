@@ -18,7 +18,7 @@
 			<div id="thumbFeatures">
 				<?php foreach($hilights as $hilight): ?>
 					<div>
-						<a href="<?php echo (is_file($hilight->pdf))?$hilight->pdf:$hilight->url?>" target="_blank"><img src="uploads/hilight/<?php echo $hilight->image ?>" /></a>
+						<a href="<?php echo (is_file($hilight->pdf))?$hilight->pdf:$hilight->url?>" target="_blank"><img src="uploads/hilight/<?php echo $hilight->image ?>" alt="สำนักโรคติดต่อทั่วไป <?=lang_decode($hilight->title)?>" /></a>
 					</div>
 				<?php endforeach; ?>
 			</div>
