@@ -15,7 +15,7 @@
 	<?endif;?>
 
 <?else:?>
-<div class="topic cufon"><span style="color:#8E4F3B;"><?php echo lang_decode($page->title) ?></span></div>
+<div class="topic cufon"><span style="color:#8E4F3B;"><?php echo lang_decode($page->title) ?> <span class="f10 TxtGray2"> <?php echo mysql_to_th($page->created) ?> - <?php echo $page->counter ?> ครั้ง</span></span></div>
 <div id="data">
 	<?php echo lang_decode($page->detail) ?>
 <?endif;?>

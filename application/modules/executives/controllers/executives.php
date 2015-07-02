@@ -120,6 +120,21 @@ class Executives extends Public_Controller
 		$this->template->build('more',$data);
 	}
 	
+	function exe_more(){
+		$executives = new Executive();
+		lang_filter($executives->where("start_date <= date(sysdate()) and (end_date >= date(sysdate()) or end_date = date('0000-00-00')) and status = 'approve'"));
+		$data['executives'] = $executives->order_by('id','desc')->get();
+		
+		$this->template->build('exe_more',$data);
+	}
+	
+	function it_more(){
+		$data['its'] = new Executive_it();
+		$data['its']->order_by('id','desc')->get();
+		
+		$this->template->build('it_more',$data);
+	}
+	
 	function it_view($id=false)
 	{
 		$data['executive'] = new Executive_it($id);

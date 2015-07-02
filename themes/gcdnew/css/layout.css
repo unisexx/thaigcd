@@ -9,7 +9,7 @@ a {color: #484848; text-decoration:none; outline: 0;}
 
 #header { position:relative; padding:0px;}  
 #header #url { padding:7px 0 20px 8px;} 
-#header #logo { background:url(../images/logo.png) no-repeat; width:107px; height:107px;}
+#header #logo { background:url(../images/logo2.png) no-repeat; width:107px; height:107px;}
 #header #flag { position:absolute; left:118px; top:56px;} 
 #header #flag a.thai { width:30px;height:25px; background:url(../images/thai.png) no-repeat; float:left; display:block; text-indent:-5000px}
 #header #flag a.eng { width:25px;height:25px; background:url(../images/eng.png) no-repeat; float:left; display:block; text-indent:-5000px}

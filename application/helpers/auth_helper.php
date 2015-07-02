@@ -171,6 +171,10 @@ function is_auth()
 	{
 		return true;
 	}
+	if($method == "approve2")
+	{
+		return true;
+	}
 	if((@$user->level->auth->{$class}->{$method}=="1")||($class=="profiles")||($class=="categories")||($class=="calendars")||($class=="overview")||($class=="dashboards")||($class=="logs"))
 	{
 		return true;

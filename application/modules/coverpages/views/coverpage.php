@@ -34,7 +34,7 @@
 <!doctype html>
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>สำนักโรคติดต่อทั่วไป :: Bureau of General Communicable Department of Disease Control MOPH, Thailand</title>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" ></script>
 	<script type="text/javascript" src="../../media/js/cufon/cufon-yui.js"></script>
@@ -52,11 +52,11 @@
 </head>
 <body style="background:<?=$coverpage->background?>; color:<?=$fore_color?>;">
   <div class="block">
-  	<center>
-  		<img src="../../<?=$coverpage->image?>">
+  	<div style="text-align: center;">
+  		<img src="../../<?=$coverpage->image?>" alt="<?=$coverpage->title?>">
   		<br /><br />
   		<a href="/home">+++  เข้าสู่เว็บไซต์สำนักโรคติดต่อทั่วไป  +++</a>
-  	</center>
+  	</div>
   </div>
 </body>
 </html>

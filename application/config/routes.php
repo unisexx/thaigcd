@@ -50,8 +50,8 @@ $route['blogs/post/([^/]+)'] = "blogs/post/$1";
 $route['blogs/([^/]+)'] = "blogs/index/$1";
 $route['blogs/([^/]+)/([^/]+)'] = "blogs/index/$1/$2";
 
-$route['executives/([^/]+)'] = "executives/index/$1";
-$route['executives/view/([^/]+)'] = "executives/view/$1";
+// $route['executives/([^/]+)'] = "executives/index/$1";
+// $route['executives/view/([^/]+)'] = "executives/view/$1";
 
 $route['knowledges/([^/]+)'] = "knowledges/index/$1";
 $route['knowledges/view/([^/]+)'] = "knowledges/view/$1";

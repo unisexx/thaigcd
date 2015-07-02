@@ -12,7 +12,7 @@
 	<div class="box-executive-news">
 		<ul>
   		<?php foreach($videos as $video):?>
-  			<li>- <a href="executives/video_view/<?php echo $video->id?>"><?php echo $video->title?></a></li>
+  			<li style="list-style-type: disc !important;"><a href="executives/video_view/<?php echo $video->id?>"><?php echo $video->title?></a></li>
   		<?php endforeach;?>
   		</ul>
 	</div>

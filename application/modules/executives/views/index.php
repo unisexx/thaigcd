@@ -39,32 +39,33 @@
 		</div>
 	</div>
 	<div style="width:450px;float:right;">
-		<div class="infos">
+		<!-- <div class="infos">
 			<h3>ข่าวประชาสัมพันธ์</h3>
 			<ul>
 				<?php foreach($executive_infos as $info):?>
 					<li>- <a href="executives/info_view/<?php echo $info->id?>"><?php echo $info->title?></a></li>
 				<?php endforeach;?>
 			</ul>
-			<!-- <div class="more"><a href="executives/info_view/<?php echo $info->id?>">อ่านต่อ</a></div> -->
-		</div>
+			<div class="more"><a href="executives/info_view/<?php echo $info->id?>">อ่านต่อ</a></div>
+		</div> -->
 		<div class="executive" style="margin-top:10px;">
 			<h3>ข่าวสารผู้บริหาร</h3>
 			<ul>
 				<?php foreach($executives as $executive):?>
-					<li>- <a href="executives/view/<?php echo $executive->id?>"><?php echo lang_decode($executive->title)?></a></li>
+					<li style="list-style-type: disc !important;"><a href="executives/view/<?php echo $executive->id?>"><?php echo lang_decode($executive->title)?></a></li>
 				<?php endforeach;?>
 			</ul>
-			<!-- <div class="more"><a href="executives/view/<?php echo $executive->id?>">อ่านต่อ</a></div> -->
+			<div class="more"><a href="executives/exe_more">อ่านต่อ</a></div>
+			<br>
 		</div>
 		<div class="executive" style="margin-top:10px;">
 			<h3>ผู้บริหารเทคโนโลยีสารสนเทศระดับสูง สำนักโรคติดต่อทั่วไป</h3>
 			<ul>
 				<?php foreach($executive_its as $it):?>
-					<li>- <a href="executives/it_view/<?php echo $it->id?>"><?php echo lang_decode($it->title)?></a></li>
+					<li style="list-style-type: disc !important;"><a href="executives/it_view/<?php echo $it->id?>"><?php echo lang_decode($it->title)?></a></li>
 				<?php endforeach;?>
 			</ul>
-			<div class="more"><a href="executives/more/news">อ่านต่อ</a></div>
+			<div class="more"><a href="executives/it_more">อ่านต่อ</a></div>
 		</div>
 	</div>
 	<br clear="all">
@@ -74,7 +75,7 @@
 		<h3>คลิปวิดีโอ</h3>
 		<ul>
 			<?php foreach($videos as $video):?>
-				<li>- <a href="executives/video_view/<?php echo $video->id?>"><?php echo $video->title?></a></li>
+				<li style="list-style-type: disc !important;"><a href="executives/video_view/<?php echo $video->id?>"><?php echo $video->title?></a></li>
 			<?php endforeach;?>
 		</ul>
 		<div class="more"><a href="executives/video_view/<?php echo $video->id?>">อ่านต่อ</a></div>

@@ -14,7 +14,7 @@
 			<div class="box <?php echo alternator('','alt')?>"> 
 				<a href="informations/view/<?php echo $information->id ?>" class="thumb" <?php echo (pathinfo($information->pdf, PATHINFO_EXTENSION)=="pdf")?'target="_blank"':'target="_self"' ?> ><img src="<?php echo (is_file('uploads/information/thumbnail/'.$information->image))? 'uploads/information/thumbnail/'.$information->image : 'themes/thaigcd/photo/nophoto.gif' ?>" width="77" height="64" alt="<?=lang_decode($information->title)?>" /></a>
 				<div class="box_info">
-					<span><?php echo mysql_to_th($information->start_date)?> - <?php echo ($information->group_id)?lang_decode($information->group->name):lang_decode($information->user->group->name) ?></span>
+					<span><?php echo mysql_to_th($information->start_date)?> - <?php echo ($information->group_id)?lang_decode($information->group->name):lang_decode($information->user->group->name) ?> (<?=@$information->user->profile->agency->name?>)</span>
 					<a href="informations/view/<?php echo $information->id ?>"  <?php echo (pathinfo($information->pdf, PATHINFO_EXTENSION)=="pdf")?'target="_blank"':'target="_self"' ?> ><h3><?php echo lang_decode($information->title) ?> <?php echo icon_file($information->pdf) ?> <?php echo icon_new($information) ?></h3></a>
 					<p><?php echo lang_decode($information->intro) ?></p>
 				</div>

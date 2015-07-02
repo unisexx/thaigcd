@@ -39,7 +39,7 @@ margin-left: 8px;}
 					<div style="font-size: 12px;font-weight: bold;"><?php echo $user->profile->first_name ?> <?php echo $user->profile->last_name ?></div>
 					<div style="">ผู้อำนวยการสำนักโรคติดต่อทั่วไป</div>
 					<ul class="xxx">
-						<li><a href="executives/view/<?php echo $executives->id?>" target="_self">ข่าวสารจากผู้อำนวยการ</a></li>
+						<!-- <li><a href="executives/view/<?php echo $executives->id?>" target="_self">ข่าวสารจากผู้อำนวยการ</a></li> -->
 						<li><a href="executives/<?php echo $user->id?>" target="_self">ทำเนียบผู้บริหาร</a></li>
 						<li><a rel="lightbox" href="executives/contact/<?php echo $user->id ?>?iframe=true&width=455&height=450" target="_self">ส่งสารถึงผู้อำนวยการ</a></li>
 					</ul>

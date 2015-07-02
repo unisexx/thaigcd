@@ -60,6 +60,7 @@ class Pages extends Public_Controller
 			redirect($_SERVER['HTTP_REFERER']);
 		}
 		$data['page'] = new Page($id);
+		$data['page']->counter();
 		$this->template->build('page_index',$data);
 	}
 	
