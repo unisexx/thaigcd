@@ -26,8 +26,8 @@ function login($username,$password)
 		{
 			return FALSE;
 		}
-		$CI->session->set_userdata('id',$user->id);
-		$CI->session->set_userdata('level',$user->level_id);
+		$_SESSION['id'] = $user->id; // $CI->session->set_userdata('id',$user->id);
+		$_SESSION['level'] = $user->level_id; // $CI->session->set_userdata('level',$user->level_id);
 		return TRUE;
 	}
 	else
@@ -58,8 +58,8 @@ function email_login($email,$password)
 		if($user->m_status == "ban"){
 			return FALSE;
 		}
-		$CI->session->set_userdata('id',$user->id);
-		$CI->session->set_userdata('level',$user->level_id);
+		$_SESSION['id'] = $user->id; // $CI->session->set_userdata('id',$user->id);
+		$_SESSION['level'] = $user->level_id; // $CI->session->set_userdata('level',$user->level_id);
 		//$log = fopen("log.txt", "a");
 		//fwrite($log, ' '.$user->last_login.' - '.$user->email.' เข้าสู่ระบบ'.'\r\n');
 		//fclose($log);
@@ -76,7 +76,7 @@ function email_login($email,$password)
 function is_login($level_name = FALSE)
 {
 	$CI =& get_instance();
-	$user = new User($CI->session->userdata('id'));
+	$user = new User($_SESSION['id']); //$user = new User($CI->session->userdata('id'));
 	if($level_name)
 	{
 		if($user->level->is_admin)
@@ -98,14 +98,14 @@ function is_login($level_name = FALSE)
 function login_data($field)
 {
 	$CI =& get_instance();
-	$user = new User($CI->session->userdata('id'));
+	$user = new User($_SESSION['id']); // $user = new User($CI->session->userdata('id'));
 	return $user->{$field};
 }
 
 function user($id=FALSE)
 {
 	$CI =& get_instance();
-	$id = ($id)?$id:$CI->session->userdata('id');
+	$id = ($id)?$id: $_SESSION['id']; //$CI->session->userdata('id');
 	$user = new User($id);
 	return $user;
 }
@@ -120,14 +120,14 @@ function user_data($field,$id)
 function logout()
 {
 	$CI =& get_instance();
-	$CI->session->unset_userdata('id');
-	$CI->session->unset_userdata('level');
+	unset($_SESSION['id']); // $CI->session->unset_userdata('id');
+	unset($_SESSION['level']); // $CI->session->unset_userdata('level');
 }
 
 function is_auth()
 {
 	$CI =& get_instance();
-	$user = new User($CI->session->userdata('id'));
+	$user = new User($_SESSION['id']); // $user = new User($CI->session->userdata('id'));
 	$user->level->auth = json_decode($user->level->auth);
 	$method = $CI->router->fetch_method();
 	$class = $CI->router->fetch_class();
@@ -188,7 +188,7 @@ function is_auth()
 function is_publish($class)
 {
 	$CI =& get_instance();
-	$user = new User($CI->session->userdata('id'));
+	$user = new User($_SESSION['id']); // $user = new User($CI->session->userdata('id'));
 	$user->level->auth = json_decode($user->level->auth);
 	$method = "index";
 	return (@$user->level->auth->{$class}->{$method}=="1")?TRUE:FALSE;
@@ -197,7 +197,7 @@ function is_publish($class)
 function is_authen($class,$method = "index")
 {
 	$CI =& get_instance();
-	$user = new User($CI->session->userdata('id'));
+	$user = new User($_SESSION['id']); // $user = new User($CI->session->userdata('id'));
 	$user->level->auth = json_decode($user->level->auth);
 	return (@$user->level->auth->{$class}->{$method}=="1")?TRUE:FALSE;
 }
@@ -205,7 +205,7 @@ function is_authen($class,$method = "index")
 function auth_filter($orm)
 {
 	$CI =& get_instance();
-	$user = new User($CI->session->userdata('id'));
+	$user = new User($_SESSION['id']); // $user = new User($CI->session->userdata('id'));
 	if($user->level->view == 1)
 	{
 		return $orm;
@@ -223,7 +223,7 @@ function auth_filter($orm)
 function is_superadmin($orm)
 {
 	$CI =& get_instance();
-	$user = new User($CI->session->userdata('id'));
+	$user = new User($_SESSION['id']); // $user = new User($CI->session->userdata('id'));
 	if($user->level->view == 1)
 	{
 		return TRUE;
@@ -238,7 +238,7 @@ function is_superadmin($orm)
 function is_owner($id)
 {
 	$CI =& get_instance();
-	if($id == $CI->session->userdata('id'))
+	if($id == $_SESSION['id']) //if($id == $CI->session->userdata('id'))
 	{
 		return TRUE;
 	}
@@ -251,7 +251,7 @@ function is_owner($id)
 function is_approver($id = FALSE)
 {
 	$CI =& get_instance();
-	if(!$id)$id = $CI->session->userdata('id');
+	if(!$id)$id = $_SESSION['id']; // $CI->session->userdata('id');
 	$user = new User($id);
 	if($user->level->approve == "1")
 	{
@@ -280,7 +280,7 @@ function approver_dropdown($orm)
 	 if(!is_approver())
 	 {
 	 	$CI =& get_instance();
-		$user = new User($CI->session->userdata('id'));
+		$user = new User($_SESSION['id']); // $user = new User($CI->session->userdata('id'));
 		$users = new User();
 		$query = "SELECT users.id,concat(profiles.first_name,' ',profiles.last_name) name
 						FROM users left join profiles on
@@ -299,13 +299,13 @@ function approver_form($orm)
 {
 	$group = group_dropdown($orm);
 	$CI =& get_instance();
-	if($orm->approve_id==$CI->session->userdata('id'))
+	if($orm->approve_id==$_SESSION['id']) // if($orm->approve_id==$CI->session->userdata('id'))
 	{
 		return $group.'<tr><th>สถานะ :</th><td>'.form_dropdown('status',array('approve'=>'Approve','draft'=>'Draft'),$orm->status).'</td></tr><tr><th>ความคิดเห็น :</th><td><textarea name="comment">'.$orm->comment.'</textarea></td></tr>';
 	}
-	elseif(is_approver($CI->session->userdata('id')))
+	elseif(is_approver($_SESSION['id'])) // elseif(is_approver($CI->session->userdata('id')))
 	{
-		return $group.'<tr><th>สถานะ :</th><td>'.form_dropdown('status',array('approve'=>'Approve','draft'=>'Draft'),$orm->status).'</td></tr><tr><th>ความคิดเห็น :</th><td><textarea name="comment">'.$orm->comment.'</textarea><input type="hidden" name="approve_id" value="'.$CI->session->userdata('id').'" /></td></tr>';
+		return $group.'<tr><th>สถานะ :</th><td>'.form_dropdown('status',array('approve'=>'Approve','draft'=>'Draft'),$orm->status).'</td></tr><tr><th>ความคิดเห็น :</th><td><textarea name="comment">'.$orm->comment.'</textarea><input type="hidden" name="approve_id" value="'.$_SESSION['id'].'" /></td></tr>';
 	}
 	else
 	{

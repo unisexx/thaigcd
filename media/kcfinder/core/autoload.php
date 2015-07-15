@@ -11,7 +11,8 @@
   *   @license http://www.opensource.org/licenses/lgpl-2.1.php LGPLv2
   *      @link http://kcfinder.sunhater.com
   */
-
+session_start();
+if(!empty($_SESSION['id'])) {
 function __autoload($class) {
     if ($class == "uploader")
         require "core/uploader.php";
@@ -24,5 +25,7 @@ function __autoload($class) {
     elseif (file_exists("lib/helper_$class.php"))
         require "lib/helper_$class.php";
 }
-
+}else{
+	exit();
+}
 ?>

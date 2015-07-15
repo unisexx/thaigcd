@@ -116,6 +116,7 @@ class ORM extends DataMapper
 			$this->load->library('uploader');
 			$handle = new Uploader();
 			$handle->Upload($file);
+			$handle->allowed = array('image/jpeg','image/jpg','image/gif','image/png','image/bmp', 'application/pdf');
 			$this->handle =& $handle;
 			if($width)
 			{

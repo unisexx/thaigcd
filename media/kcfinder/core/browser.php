@@ -11,7 +11,8 @@
   *   @license http://www.opensource.org/licenses/lgpl-2.1.php LGPLv2
   *      @link http://kcfinder.sunhater.com
   */
-
+session_start();
+if(empty($_SESSION['id'])) exit();
 class browser extends uploader {
     protected $action;
     protected $thumbsDir;
