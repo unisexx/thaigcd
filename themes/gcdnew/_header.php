@@ -97,6 +97,7 @@
 	    </ul>
 	  </li>
 	  <li><a target="_self" href="pages/contactus"><?php echo lang('contact')?></a></li>
+	  <li><a target="_self" href="knowledges/17">ความรู้เรื่องโรคติดต่อ</a></li>
 	</ul>
 </div>
 <?php else:?>
