@@ -1,6 +1,6 @@
 <!-- Load TinyMCE -->
 <script type="text/javascript" src="media/tiny_mce/tiny_mce.js"></script>
-<script type="text/javascript" src="media/tiny_mce/config.js"></script>
+<script type="text/javascript" src="media/tiny_mce/config.js?v=1"></script>
 <script type="text/javascript">
 	tiny('detail[th],detail[en]');
 	$(function(){

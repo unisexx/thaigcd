@@ -69,10 +69,7 @@
 	  <li><a target="_self" href="pages/aboutus"><?php echo lang('about')?></a>
 	    <ul>
 	      <li><a href="pages/department_history">ประวัติสำนัก</a></li>
-	      <li><a href="pages/department_vision">วิสัยทัศน์</a></li>
-	      <li><a href="pages/department_mission">พันธกิจ</a></li>
-	      <li><a href="pages/department_strategy">กลยุทธ์</a></li>
-	      <li><a href="pages/department_tasks">ภารกิจ</a></li>
+	      <li><a href="pages/department_vision">วิสัยทัศน์/พันธกิจ</a></li>
 	      <li><a href="pages/department_structure">โครงสร้างหน่วยงาน</a></li>
 	      <li><a href="pages/department_location">ที่ตั้งหน่วยงาน</a></li>
 	      <li><a href="pages/department_plan">แผนปฏิบัติราชการ</a></li>

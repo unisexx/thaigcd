@@ -23,6 +23,7 @@ class Pages extends Admin_Controller
 	
 	function save($id=FALSE)
 	{
+		$this->db->debug = true;
 		if($_POST)
 		{
 			$page = new Page($id);
@@ -36,7 +37,7 @@ class Pages extends Admin_Controller
 			
 			set_notify('success', lang('save_data_complete'));
 		}
-		redirect('pages/admin/pages');
+		//redirect('pages/admin/pages');
 	}
 	
 	function delete($id)
