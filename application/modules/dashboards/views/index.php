@@ -75,6 +75,7 @@ foreach($visits as $v){
 </table>
 </div>
 </div>
+
 <div style="width:50%; float:left">
 <div style="padding:0 0 0 5px;">
 <h1>คำค้นยอดนิยม</h1>
@@ -97,6 +98,8 @@ foreach($visits as $v){
 </table>
 </div>
 </div>
+
+
 <div style="width:50%; float:left">
 <div style="padding:0 0 0 5px;">
 <h1>เนื้อหายอดนิยม</h1>
@@ -173,13 +176,3 @@ foreach($topBrowsers as $browser){
 <div class="clear"></div>
 
 </div>
-
-
-
-
-
-
-
-
-
-
