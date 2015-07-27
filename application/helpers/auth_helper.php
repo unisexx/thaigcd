@@ -26,8 +26,10 @@ function login($username,$password)
 		{
 			return FALSE;
 		}
-		$_SESSION['id'] = $user->id; // $CI->session->set_userdata('id',$user->id);
-		$_SESSION['level'] = $user->level_id; // $CI->session->set_userdata('level',$user->level_id);
+		$_SESSION['id'] = $user->id;  
+		$CI->session->set_userdata('id',$user->id);
+		$_SESSION['level'] = $user->level_id;  
+		$CI->session->set_userdata('level',$user->level_id);
 		return TRUE;
 	}
 	else
