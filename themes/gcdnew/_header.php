@@ -67,11 +67,13 @@
 	<ul id="drop-nav">
 	  <li><a target="_self" href="home"><?php echo lang('home')?></a></li>
 	  <li><a target="_self" href="pages/aboutus"><?php echo lang('about')?></a>
-	    <!-- <ul>
-	      <li><a href="#">HTML</a></li>
-	      <li><a href="#">CSS</a></li>
-	      <li><a href="#">JavaScript</a></li>
-	    </ul> -->
+	    <ul>
+	      <li><a href="pages/department_history">ประวัติสำนัก</a></li>
+	      <li><a href="pages/department_vision">วิสัยทัศน์/พันธกิจ</a></li>
+	      <li><a href="pages/department_structure">โครงสร้างหน่วยงาน</a></li>
+	      <li><a href="pages/department_location">ที่ตั้งหน่วยงาน</a></li>
+	      <li><a href="pages/department_plan">แผนปฏิบัติราชการ</a></li>
+	    </ul>
 	  </li>
 	  <li><a target="_self" href="executives"><?php echo lang('executives')?></a></li>
 	  <li><a target="_self" href="groups"><?php echo lang('structures')?></a>
@@ -97,6 +99,7 @@
 	    </ul>
 	  </li>
 	  <li><a target="_self" href="pages/contactus"><?php echo lang('contact')?></a></li>
+	  <li><a target="_self" href="knowledges/17">ความรู้เรื่องโรคติดต่อ</a></li>
 	</ul>
 </div>
 <?php else:?>

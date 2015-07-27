@@ -6,7 +6,7 @@ function tiny(elements){
 		skin: "cirkuit",
 		plugins: "pdw,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,advlist",
 		file_browser_callback: 'openKCFinder',
-		
+		extended_valid_elements : "iframe[src|frameborder|style|scrolling|class|width|height|name|align]",
 		theme_advanced_buttons1: "pdw_toggle,formatselect,fontsizeselect,forecolor,|,bold,italic,strikethrough,|,bullist,numlist,|,justifyleft,justifycenter,justifyright,|,link,unlink,|,spellchecker,|,image",
 		theme_advanced_buttons2: "code,paste,pastetext,pasteword,removeformat,|,backcolor,|,underline,justifyfull,sup,|,outdent,indent,|,hr,charmap,|,media,|,search,replace,|,fullscreen,|,undo,redo",
 		theme_advanced_buttons3: "tablecontrols,|,visualaid,template,pagebreak,preview,emotions",
