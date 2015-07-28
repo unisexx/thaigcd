@@ -1,4 +1,11 @@
 <h1>หน้าเพจ</h1>
+<div class="search">
+	<form method="get">
+		<table class="form">
+			<tr><th>หัวข้อ</th><td><input type="text" name="search" value="<?php echo (isset($_GET['search']))?$_GET['search']:'' ?>" /></td><td><input type="submit" value="ค้นหา" /></td></tr>
+		</table>
+	</form>
+</div>
 <table class="list">
 	<tr>
 		<th>หัวข้อ</th>

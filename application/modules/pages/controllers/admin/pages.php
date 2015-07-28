@@ -10,6 +10,7 @@ class Pages extends Admin_Controller
 	function index()
 	{
 		$pages = new Page();
+		if(@$_GET['search'])$pages->where("title like '%".$_GET['search']."%'");
 		$data['pages'] = $pages->order_by('id','desc')->get_page();
 		$this->template->build('admin/page_index',$data);
 	}
