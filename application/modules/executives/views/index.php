@@ -66,9 +66,16 @@
 				<?php endforeach;?>
 			</ul>
 			<div class="more"><a href="executives/it_more">อ่านต่อ</a></div>
-		</div>
+		</div>				
 	</div>
 	<br clear="all">
+	<div style="margin-top:10px;">
+			<h3>ผู้บริหารสำนักโรคติดต่อทั่วไป</h3>
+			<?php 
+				$excutive_list = new Page(84);
+				echo lang_decode($excutive_list->detail);
+			?>
+	</div>
 	<div style="margin-top:5px;">
 		<div style="text-align: center;margin:5px 0;"><?php echo $videos->title?></div>
 		<?php echo youtube($videos->url,'635','390');?><br><br>
