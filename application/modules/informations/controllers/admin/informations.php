@@ -96,7 +96,7 @@ class Informations extends Admin_Controller
 	function unstick_thread($id)
 	{
 		$data = new Information($id);
-		$data->stick = 0;
+		$data->stick = null;
 		$data->save();
 		set_notify('success', 'ยกเลิกการปักหมุดกระทู้เรียบร้อย');
 		redirect($_SERVER['HTTP_REFERER']);

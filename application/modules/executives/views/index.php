@@ -2,7 +2,7 @@
 	.more a{float:right; font-size:10px;color:purple;font-weight;bold;}
 	h3{font-size:16px; color:brown;}
 </style>
-<div class="topic"><img class="topic_executives" src="<?php echo topic("topic_executives.png") ?>" height="25" width="200"></div>
+<div class="topic"><img class="topic_executives" src="<?php echo topic("topic_executives.png") ?>" ></div>
 <div id="data" class="dexclutive">
 	<!-- <?php foreach($users as $user): ?>
 	<div class="box-executive"> 
@@ -31,14 +31,14 @@
 
 <br clear="all">
 	<h1 style="color:green;font-size:20px;"><?php echo lang_decode($users->profile->first_name)?> <?php echo lang_decode($users->profile->last_name)?></h1><br clear="all">
-	<div style="width:160px;float:left;">
-		<img src="uploads/users/<?php echo $users->profile->avatar ?>" class="executivephoto" width="140">
+	<div style="width:250px;float:left;">
+		<img src="uploads/users/<?php echo $users->profile->avatar ?>" class="executivephoto" width="300">
 		<div>
 			<?php echo lang_decode($users->profile->short_history)?>
 			<div class="more"><a href="executives/history/<?php echo $users->id?>">อ่านต่อ</a></div>
 		</div>
 	</div>
-	<div style="width:450px;float:right;">
+	<div style="width:350px;float:right;">
 		<!-- <div class="infos">
 			<h3>ข่าวประชาสัมพันธ์</h3>
 			<ul>
@@ -49,6 +49,15 @@
 			<div class="more"><a href="executives/info_view/<?php echo $info->id?>">อ่านต่อ</a></div>
 		</div> -->
 		<div class="executive" style="margin-top:10px;">
+			<h3>ผู้บริหารเทคโนโลยีสารสนเทศระดับสูง สำนักโรคติดต่อทั่วไป</h3>
+			<ul>
+				<?php foreach($executive_its as $it):?>
+					<li style="list-style-type: disc !important;"><a href="executives/it_view/<?php echo $it->id?>"><?php echo lang_decode($it->title)?></a></li>
+				<?php endforeach;?>
+			</ul>
+			<div class="more"><a href="executives/it_more">อ่านต่อ</a></div>
+		</div>	
+		<div class="executive" style="margin-top:10px;">
 			<h3>ข่าวสารผู้บริหาร</h3>
 			<ul>
 				<?php foreach($executives as $executive):?>
@@ -58,15 +67,7 @@
 			<div class="more"><a href="executives/exe_more">อ่านต่อ</a></div>
 			<br>
 		</div>
-		<div class="executive" style="margin-top:10px;">
-			<h3>ผู้บริหารเทคโนโลยีสารสนเทศระดับสูง สำนักโรคติดต่อทั่วไป</h3>
-			<ul>
-				<?php foreach($executive_its as $it):?>
-					<li style="list-style-type: disc !important;"><a href="executives/it_view/<?php echo $it->id?>"><?php echo lang_decode($it->title)?></a></li>
-				<?php endforeach;?>
-			</ul>
-			<div class="more"><a href="executives/it_more">อ่านต่อ</a></div>
-		</div>				
+					
 	</div>
 	<br clear="all">
 	<div style="margin-top:10px;">

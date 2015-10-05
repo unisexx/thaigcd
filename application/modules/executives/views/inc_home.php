@@ -33,7 +33,7 @@ margin-left: 8px;}
 				<?php endforeach; ?> -->
 				
 				<div style="border:1px solid white; float: left; width:70px;">
-					<img src="uploads/users/<?php echo $user->profile->avatar ?>" width="70" height="100" alt="<?php echo $user->profile->first_name ?> <?php echo $user->profile->last_name ?>">
+					<img src="uploads/users/<?php echo $user->profile->avatar_index ?>" width="70" height="100" alt="<?php echo $user->profile->first_name ?> <?php echo $user->profile->last_name ?>">
 				</div>
 				<div style="float:right; width:150px; font-size: 11px;">
 					<div style="font-size: 12px;font-weight: bold;"><?php echo $user->profile->first_name ?> <?php echo $user->profile->last_name ?></div>

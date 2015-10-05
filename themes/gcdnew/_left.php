@@ -26,6 +26,7 @@
             <div id="banner">
             	<ul>
             		<li><a href="http://www.pinkforms.com" target="_blank"><img src="themes/gcdnew/photo/bann_pinkforms.jpg" width="248" height="69" alt="ระบบออกแบบใบรับรองการผลิด pinkform" /></a></li>
+            		<li><a href="http://www.thailandntr.com/ntr.php" target="_blank"><img src="themes/gcdnew/photo/29719.jpg" width="248" height="69" alt="ระบบคลังข้อมูลทางการค้าไทย" /></a></li>
             		<li><a href="http://support.ddc.moph.go.th/dT_Report/#" target="_blank"><img src="themes/gcdnew/photo/bann_vaccine.jpg" width="248" height="69" alt="ระบบรายงานผลการรณรงค์ให้วัคซีน dT" /></a></li>
             		<li><a href="http://support.ddc.moph.go.th/gcd_vaccine_report" target="_blank"><img src="themes/gcdnew/photo/bann_gcd_vaccine_report.jpg" width="248" height="69" alt="ระบยรายงานผลวัคซีน dT,MR,FLU ปี 2558" /></a></li>
             		<li><a href="http://dpis.ddc.moph.go.th:8080/admin/index.html" target="_blank"><img src="themes/gcdnew/photo/bann_dpis.jpg" width="248" height="69" alt="dpis"/></a></li>
