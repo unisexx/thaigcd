@@ -53,7 +53,6 @@
 	<a target="_self" href="home/lang/th" style="color:white;">THAI</a> | <a target="_self" href="http://thaigcd.ddc.moph.go.th/en/" style="color:white;">ENGLISH</a>
 </div>
 
-
 <?php if(@$this->session->userdata('lang') == "th"):?>
 <div id="menu">
 	<!-- <ul>
@@ -86,15 +85,16 @@
 	      <li><a href="groups/view/6">กลุ่มสื่อสารสาธารณะและภาคีเครือข่าย</a></li>
 	      <li><a href="groups/view/8">กลุ่มบริหารเวชภัณฑ์</a></li>
 	      <li><a href="groups/view/5">กลุ่มโรคติดต่อระหว่างประเทศ</a></li>
-	      <li><a href="groups/view/10">ด่านควบคุมโรคติดต่อระหว่างประเทศ ท่าเรือกรุงเทพฯ</a></li>
-	      <li><a href="groups/view/9">ด่านควบคุมโรคติดต่อระหว่างประเทศ ท่าอากาศยานสุวรรณภูมิ</a></li>
-	      <li><a href="groups/view/16">ด่านควบคุมโรคติดต่อระหว่างประเทศ ท่าอากาศยานดอนเมือง</a></li>
-	      <li><a href="groups/view/13">ที่ทำการแพทย์ตรวจคนเข้าเมืองแจ้งวัฒนะ</a></li>
-	      <li><a href="groups/view/14">ที่ทำการแพทย์ตรวจคนเข้าเมืองสวนพลู</a></li>
+	      <li><a href="groups/view/10">&nbsp;&nbsp;|- ด่านควบคุมโรคติดต่อระหว่างประเทศ ท่าเรือกรุงเทพฯ</a></li>
+	      <li><a href="groups/view/9">&nbsp;&nbsp;|- ด่านควบคุมโรคติดต่อระหว่างประเทศ ท่าอากาศยานสุวรรณภูมิ</a></li>
+	      <li><a href="groups/view/16">&nbsp;&nbsp;|- ด่านควบคุมโรคติดต่อระหว่างประเทศ ท่าอากาศยานดอนเมือง</a></li>
+	      <li><a href="groups/view/13">&nbsp;&nbsp;|- ที่ทำการแพทย์ตรวจคนเข้าเมืองแจ้งวัฒนะ</a></li>
+	      <li><a href="groups/view/14">&nbsp;&nbsp;|- ที่ทำการแพทย์ตรวจคนเข้าเมืองสวนพลู</a></li>
 	      <li><a href="groups/view/12">ศูนย์ประสานงานโครงการกวาดล้างโปลิโอและโรคหัดตามพันธะสัญญานานาชาติ</a></li>
-	      <li><a href="groups/view/11">กลุ่มปฏิบัติการเตรียมพร้อมตอบโต้ภาวะฉุกเฉินด้านการควบคุมโรคและภัยสุขภาพ</a></li>
+	      <li><a href="groups/view/11">กลุ่มขับเคลื่อนภารกิจตามพระราชบัญญัติโรคติดต่อ พ.ศ.2558​</a></li>
 	      <li><a href="groups/view/17">กลุ่มศูนย์เด็กเล็กและโรคติดต่อในเด็ก</a></li>
-	      <li><a href="groups/view/15">โครงการตามพระราชดำริฯ ควบคุมโรคหนอนพยาธิ</a></li>
+	      <li><a href="groups/view/15">กลุ่มโครงการตามพระราชดำริฯ โรคหนอนพยาธิ โรคในถิ่นทุรกันดาร</a></li>
+	      <li><a href="groups/view/20">กลุ่มเวชศาสตร์การเดินทางและท่องเที่ยว</a></li>
 	      <!-- <li><a href="groups/view/18">ศูนย์ช่วยอำนวยการ</a></li> -->
 	    </ul>
 	  </li>

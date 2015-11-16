@@ -6,18 +6,18 @@ class ORM extends DataMapper
 	public $sql = NULL;
 	public $creater_field = "user_id";
 	public $updater_field = "updater";
-	
+
 	function __construct($id = NULL)
     {
         parent::__construct($id);
     }
-	
+
 	public function sql($sql = NULL)
 	{
 		$this->sql = $sql;
 		return $this;
 	}
-	
+
 	public function get_page($page_size = 20, $page_num_by_rows = FALSE, $info_object = 'paged', $iterated = FALSE)
 	{
 		$page = @$_GET['page'];
@@ -32,13 +32,13 @@ class ORM extends DataMapper
 		// never less than 1
 		$page = max(1, intval($page));
 		$offset = $page_size * ($page - 1);
-		
+
 		// for performance, we clear out the select AND the order by statements,
 		// since they aren't necessary and might slow down the query.
 		$count_query->db->ar_select = NULL;
 		$count_query->db->ar_orderby = NULL;
 		$total = $count_query->db->ar_distinct ? $count_query->count_distinct() : $count_query->count();
-		
+
 		// common vars
 		$last_row = $page_size * floor($total / $page_size);
 		$total_pages = ceil($total / $page_size);
@@ -57,8 +57,8 @@ class ORM extends DataMapper
 		}
 		else if($this->sql)
 		{
-			$query = $this->db->query($this->sql." limit $offset,$page_size");		
-			$this->_process_query($query);	
+			$query = $this->db->query($this->sql." limit $offset,$page_size");
+			$this->_process_query($query);
 		}
 		else
 		{
@@ -83,7 +83,7 @@ class ORM extends DataMapper
 
 		return $this;
 	}
-	
+
 	function pagination()
 	{
 		$string = $_SERVER['REQUEST_URI'];
@@ -98,14 +98,14 @@ class ORM extends DataMapper
 		$page->Items($this->paged->total_rows);
 		return $page->show();
 	}
-	
+
 	function counter($id=FALSE,$field = 'counter')
 	{
 		$id = ($id)?$id:$this->id;
 		$this->where('id',$id)->update($field,$field.' + 1',FALSE);
 		return $this;
 	}
-	
+
 	function upload(&$file,$path = 'uploads/',$width = FALSE,$height = FALSE,$ratio = FALSE)
 	{
 		if($file['name'])
@@ -116,24 +116,28 @@ class ORM extends DataMapper
 			$this->load->library('uploader');
 			$handle = new Uploader();
 			$handle->Upload($file);
-			$handle->allowed = array('image/jpeg','image/jpg','image/gif','image/png','image/bmp', 'application/pdf');
+			$handle->allowed = array('image/jpeg','image/jpg','image/gif','image/png','image/bmp', 'application/pdf',
+			'application/vnd.ms-powerpoint',
+			'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+			'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+		    );
 			$this->handle =& $handle;
 			if($width)
 			{
 				return $this->thumb($path, $width, $height, $ratio);
-			} 
+			}
 			else
 			{
-				$this->handle->file_new_name_body = $this->filename; 
+				$this->handle->file_new_name_body = $this->filename;
 				$this->handle->process($path);
-				if($this->handle->processed) 
+				if($this->handle->processed)
 				{
 					return $this->handle->file_dst_name;
 				}
-			}	
-		}	
+			}
+		}
 	}
-	
+
 	function thumb($path,$width,$height,$ratio = FALSE)
 	{
 		if($this->handle)
@@ -145,34 +149,34 @@ class ORM extends DataMapper
 				if($ratio == 'x')
 				{
 					$this->handle->image_y = $height;
-					$this->handle->image_ratio_x = TRUE;			
+					$this->handle->image_ratio_x = TRUE;
 				}
 				if($ratio == 'y')
 				{
 					$this->handle->image_x = $width;
-					$this->handle->image_ratio_y = TRUE;			
+					$this->handle->image_ratio_y = TRUE;
 				}
 			}
 			else
 			{
-				$this->handle->image_x = $width;	
+				$this->handle->image_x = $width;
 				$this->handle->image_y = $height;
 			}
-			$this->handle->file_new_name_body = $this->filename; 
+			$this->handle->file_new_name_body = $this->filename;
 			$this->handle->process($path);
-			if($this->handle->processed) 
+			if($this->handle->processed)
 			{
 				return $this->handle->file_dst_name;
 			}
 		}
 	}
-	
+
 	function delete_file($path,$field = 'image')
 	{
 		$this->get_by_id($this->id);
 		@unlink($path.$this->$field);
 	}
 
-	
+
 }
 ?>
