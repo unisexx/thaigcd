@@ -302,7 +302,7 @@
 				<tr>
 					<th><?php echo $answer ?></th>
 					<td>
-						<input type="radio" name="answer[<?php echo $question->id ?>]" value="other" /> อื่นๆ โปรดระบุ
+						<input type="radio" name="answer[<?php echo $question->id ?>]" value="other" /> อื่นๆ โปรดระบุ / Other please specify below
 						<input type="text" name="other[<?php echo $question->id ?>]" value="" style="width:70%" />
 					</td>
 				</tr>
@@ -334,7 +334,7 @@
 				<tr>
 					<th><?php echo $answer ?></th>
 					<td>
-						<input type="checkbox" name="answer[<?php echo $question->id ?>][]" value="other" /> อื่นๆ โปรดระบุ
+						<input type="checkbox" name="answer[<?php echo $question->id ?>][]" value="other" /> อื่นๆ โปรดระบุ / Other please specify below
 						<input type="text" name="other[<?php echo $question->id ?>]" value="" style="width:70%" />
 					</td>
 				</tr>
