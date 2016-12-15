@@ -32,53 +32,58 @@
 $(function(){
 	
 		$(".corner").append('<div class="tl"></div><div class="tr"></div><div class="bl"></div><div class="br"></div><div class="shadow"></div>');
+		
+		
 		//$(".datepicker").datepicker({ dateFormat: 'yy-mm-dd' ,changeMonth: true,changeYear: true, yearRange: '1940:<?php echo date('Y') ?>'});
 
-	var dateBefore=null;
-	$(".datepicker").datepicker({
-		dateFormat: 'dd/mm/yy',
-		yearRange: '1940:<?php echo date('Y') ?>',
-		dayNamesMin: ['อา', 'จ', 'อ', 'พ', 'พฤ', 'ศ', 'ส'], 
-		monthNamesShort: ['มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม'],
-		changeMonth: true,
-		changeYear: true ,
-		beforeShow:function(){
-			if($(this).val()!=""){
-				var arrayDate=$(this).val().split("/");		
-				arrayDate[2]=parseInt(arrayDate[2])-543;
-				$(this).val(arrayDate[0]+"/"+arrayDate[1]+"/"+arrayDate[2]);
-			}
-			setTimeout(function(){
-				$.each($(".ui-datepicker-year option"),function(j,k){
-					var textYear=parseInt($(".ui-datepicker-year option").eq(j).val())+543;
-					$(".ui-datepicker-year option").eq(j).text(textYear);
-				});				
-			},50);
-
-		},
-		onChangeMonthYear: function(){
-			setTimeout(function(){
-				$.each($(".ui-datepicker-year option"),function(j,k){
-					var textYear=parseInt($(".ui-datepicker-year option").eq(j).val())+543;
-					$(".ui-datepicker-year option").eq(j).text(textYear);
-				});
-			},50);
-		},
-		onClose:function(){
-			if($(this).val()!="" && $(this).val()==dateBefore){			
-				var arrayDate=dateBefore.split("/");
-				arrayDate[2]=parseInt(arrayDate[2])+543;
-				$(this).val(arrayDate[0]+"/"+arrayDate[1]+"/"+arrayDate[2]);	
-			}		
-		},
-		onSelect: function(dateText, inst){ 
-			dateBefore=$(this).val();
-			var arrayDate=dateText.split("/");
-			arrayDate[2]=parseInt(arrayDate[2])+543;
-			$(this).val(arrayDate[0]+"/"+arrayDate[1]+"/"+arrayDate[2]);
-		}
-
-	});
+	// var dateBefore=null;
+	// $(".datepicker").datepicker({
+		// dateFormat: 'dd/mm/yy',
+		// yearRange: '1940:<?php echo date('Y') ?>',
+		// dayNamesMin: ['อา', 'จ', 'อ', 'พ', 'พฤ', 'ศ', 'ส'], 
+		// monthNamesShort: ['มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม'],
+		// changeMonth: true,
+		// changeYear: true ,
+		// beforeShow:function(){
+			// if($(this).val()!=""){
+				// var arrayDate=$(this).val().split("/");		
+				// arrayDate[2]=parseInt(arrayDate[2])-543;
+				// $(this).val(arrayDate[0]+"/"+arrayDate[1]+"/"+arrayDate[2]);
+			// }
+			// setTimeout(function(){
+				// $.each($(".ui-datepicker-year option"),function(j,k){
+					// var textYear=parseInt($(".ui-datepicker-year option").eq(j).val())+543;
+					// $(".ui-datepicker-year option").eq(j).text(textYear);
+				// });				
+			// },50);
+// 
+		// },
+		// onChangeMonthYear: function(){
+			// setTimeout(function(){
+				// $.each($(".ui-datepicker-year option"),function(j,k){
+					// var textYear=parseInt($(".ui-datepicker-year option").eq(j).val())+543;
+					// $(".ui-datepicker-year option").eq(j).text(textYear);
+				// });
+			// },50);
+		// },
+		// onClose:function(){
+			// if($(this).val()!="" && $(this).val()==dateBefore){			
+				// var arrayDate=dateBefore.split("/");
+				// arrayDate[2]=parseInt(arrayDate[2])+543;
+				// $(this).val(arrayDate[0]+"/"+arrayDate[1]+"/"+arrayDate[2]);	
+			// }		
+		// },
+		// onSelect: function(dateText, inst){ 
+			// dateBefore=$(this).val();
+			// var arrayDate=dateText.split("/");
+			// arrayDate[2]=parseInt(arrayDate[2])+543;
+			// $(this).val(arrayDate[0]+"/"+arrayDate[1]+"/"+arrayDate[2]);
+		// }
+// 
+	// });
+		
+		
+		
 		$("#tabs,#tabs2").tabs();
 		$('#pane3').jScrollPane();
 		$('#pane4').jScrollPane({scrollbarOnLeft:true});
