@@ -17,6 +17,16 @@ class Calendars extends Public_Controller
 		$this->template->build('calendar_index',$data);
 	}
 	
+	function test($id=false){
+		$data['id'] = $id;
+		if($id)
+		{
+			$data['group'] = new group($id);
+			$this->template->set_layout('group_layout');
+		}
+		$this->template->build('calendar_index',$data);
+	}
+	
 	function view($id,$group_id=FALSE)
 	{
 		$type = array("e-blue" => "ประชุม","e-red" => "สัมมา","e-green" => "อบรม","e-violet" => "อื่นๆ");
