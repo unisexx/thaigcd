@@ -8,6 +8,7 @@ class Dashboards extends Admin_Controller
 		//$this->load->library('ga');
 		$this->load->library('Analytics');
 		error_reporting(0);
+		set_time_limit(0);
 	}
 	
 	function index()
