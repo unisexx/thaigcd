@@ -4,9 +4,11 @@ class Auth extends Public_Controller {
 
 	function __construct()
 	{
-		parent::__construct();	
+		parent::__construct();
+		// redirect ไปที่หลังบ้านเว็บใหม่
+		redirect('http://thaigcd.ddc.moph.go.th/2016/admin');
 	}
-	
+
 	function index()
 	{
 		if(is_login('Administrator')) redirect('users/admin/users');
@@ -15,7 +17,7 @@ class Auth extends Public_Controller {
 		$this->template->set_layout('blank');
 		$this->template->build('admin/login');
 	}
-	
+
 	function signin()
 	{
 		if($_POST)
@@ -37,7 +39,7 @@ class Auth extends Public_Controller {
 			{
 				set_notify('error', 'ชื่อผู้ใช้หรือรหัสผ่านผิดพลาดค่ะ');
 				redirect('admin');
-			}	
+			}
 		}
 		else
 		{
@@ -45,13 +47,13 @@ class Auth extends Public_Controller {
 			redirect('admin');
 		}
 	}
-	
+
 	function signout($id=FALSE)
 	{
 		logout();
 		redirect('users/admin/auth');
 	}
-	
+
 	function fail($id=FALSE)
 	{
 		$this->template->set_theme('admin');

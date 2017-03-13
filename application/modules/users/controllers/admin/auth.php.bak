@@ -5,8 +5,6 @@ class Auth extends Public_Controller {
 	function __construct()
 	{
 		parent::__construct();	
-		// redirect ไปที่หลังบ้านเว็บใหม่
-		redirect('http://thaigcd.ddc.moph.go.th/2016/admin');
 	}
 	
 	function index()
