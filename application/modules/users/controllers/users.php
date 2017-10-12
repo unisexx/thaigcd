@@ -31,46 +31,46 @@ class Users extends Public_Controller {
 		$this->template->build('admin/user_form',$data);
 	}
 	
-	function register()
-	{
-		//$this->template->append_metadata(js_datepicker());
-		$this->template->build('register');
-	}
+	// function register()
+	// {
+	// 	//$this->template->append_metadata(js_datepicker());
+	// 	$this->template->build('register');
+	// }
 	
 	
-	function signup()
-	{
-		if($_POST)
-		{	
-			if(((@$_POST['level_id']==4)&&(@$_POST['code']=="6880"))||(@$_POST['level_id']==5)||(@$_POST['level_id']==7))
+	// function signup()
+	// {
+	// 	if($_POST)
+	// 	{	
+	// 		if(((@$_POST['level_id']==4)&&(@$_POST['code']=="6880"))||(@$_POST['level_id']==5)||(@$_POST['level_id']==7))
 			
-			{
-			$user = new User();
+	// 		{
+	// 		$user = new User();
 			
-			$user->from_array($_POST);
-			$user->last_login = date('Y-m-d H:i:s');
-			if(isset($_POST['newsletters'])){
-				$user->newsletter = implode(',',$_POST['newsletters']);
-			}
-			$user->save();
-			$_POST['user_id'] = $user->id;
-			$_POST['birth_day'] = Date2DB($_POST['birth_day']);
-			$_POST['permission_id']=4;
-			$user->profile->from_array($_POST);
-			$user->profile->save();
+	// 		$user->from_array($_POST);
+	// 		$user->last_login = date('Y-m-d H:i:s');
+	// 		if(isset($_POST['newsletters'])){
+	// 			$user->newsletter = implode(',',$_POST['newsletters']);
+	// 		}
+	// 		$user->save();
+	// 		$_POST['user_id'] = $user->id;
+	// 		$_POST['birth_day'] = Date2DB($_POST['birth_day']);
+	// 		$_POST['permission_id']=4;
+	// 		$user->profile->from_array($_POST);
+	// 		$user->profile->save();
 			
-			login($_POST['username'], $_POST['password']);
-			}
-			else
-			{
-				if((@$_POST['level_id']==4)&&(@$_POST['code']<>"6880"))
-				{
-					set_notify('error','รหัสเจ้าหน้าที่ไม่ถูกต้อง');
-				}
-			}
-			redirect('home');
-		}
-	}
+	// 		login($_POST['username'], $_POST['password']);
+	// 		}
+	// 		else
+	// 		{
+	// 			if((@$_POST['level_id']==4)&&(@$_POST['code']<>"6880"))
+	// 			{
+	// 				set_notify('error','รหัสเจ้าหน้าที่ไม่ถูกต้อง');
+	// 			}
+	// 		}
+	// 		redirect('home');
+	// 	}
+	// }
 	
 	function signin()
 	{
